@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --yellow: #f7c82a;
+  --green: #8dc046;
+  --black: #222222;
+  --antracit: #3b413c;
+  --white-border: #ffffff4a;
+  --yellow-bg: #f7c82a0a;
+  --green-bg: #aaff350a;
+  --grey-text: #d1d1d1;
+  --orage: #e94e1b;
+  --yellow-hover: #be9a1e;
 }
 
 @media (prefers-color-scheme: dark) {
