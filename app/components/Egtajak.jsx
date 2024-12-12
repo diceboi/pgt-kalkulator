@@ -62,13 +62,14 @@ export default function Egtajak() {
       };
     
       const handleTouchMove = (e) => {
+        e.preventDefault(); // Prevent page scrolling
         if (!isDragging.current) return;
-    
+      
         const deltaX = e.touches[0].clientX - startX.current;
         const deltaY = e.touches[0].clientY - startY.current;
         const angle = calculateAngle(deltaX, deltaY);
         const directionIndex = getDirectionIndex(angle);
-    
+      
         setCurrentDirection(directionIndex);
       };
     
@@ -91,7 +92,8 @@ export default function Egtajak() {
           <img
             src={directions[currentDirection].src}
             alt={directions[currentDirection].name}
-            className="w-full h-full object-cover"
+            draggable="false"
+            className="w-full h-full object-cover cursor-move"
           />
         </div>
       );
