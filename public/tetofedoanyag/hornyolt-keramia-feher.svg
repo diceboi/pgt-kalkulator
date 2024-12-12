@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_3">
+    <g>
+      <path class="cls-2" d="M48.14,21.06l-12.54,12.54h-2.94c-3.38,1.56-8.02,2.56-12,2.42-2.74-.09-4.65-.69-5.57-1.6-.22-.22-.38-.46-.48-.7v-.11l11.16-11.16,1.38-1.38h20.99Z"/>
+      <line class="cls-2" x1="32.66" y1="33.6" x2="32.59" y2="33.6"/>
+      <polyline class="cls-2" points="13.23 33.6 11.86 33.6 24.4 21.06 25.48 21.06 25.77 21.06"/>
+      <polyline class="cls-2" points="14.61 36.51 14.57 36.51 11.86 36.51"/>
+      <polyline class="cls-2" points="34.14 36.51 35.6 36.51 48.13 23.98"/>
+      <line class="cls-2" x1="11.86" y1="36.51" x2="11.86" y2="33.6"/>
+      <polyline class="cls-2" points="35.6 33.6 35.6 34.29 35.6 34.34 35.6 35.23 35.6 36.51"/>
+      <line class="cls-2" x1="48.14" y1="23.98" x2="48.14" y2="21.06"/>
+      <polyline class="cls-2" points="32.64 36.51 34.13 35.05 34.14 35.05 34.14 36.51"/>
+      <path class="cls-2" d="M34.13,35.05h-1.46l-.02,1.46c-3.38,1.55-8.01,2.55-11.98,2.41-3.47-.11-5.64-1.06-6.09-2.41"/>
+      <polyline class="cls-2" points="14.61 33.71 14.61 35.05 14.61 35.27 14.61 36.51"/>
+      <polyline class="cls-2" points="14.61 35.05 13.23 35.05 13.23 33.6 25.48 21.35 25.77 21.06"/>
+      <polyline class="cls-2" points="25.77 21.06 25.77 21.35 25.77 22.44"/>
+    </g>
+    <rect class="cls-1" width="60" height="60"/>
+  </g>
+</svg>

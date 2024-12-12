@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #b3b3b3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <line class="cls-1" x1="166.03" y1="83.23" x2="166.03" y2="130.12"/>
+        <line class="cls-1" x1="153.25" y1="24.58" x2="181.33" y2="74.39"/>
+        <g>
+          <polyline class="cls-1" points="82.36 131.53 82.36 178.42 36.57 151.99 36.57 105.35"/>
+          <line class="cls-1" x1="82.36" y1="178.42" x2="166.03" y2="130.12"/>
+          <line class="cls-1" x1="77.77" y1="134.19" x2="181.33" y2="74.39"/>
+          <line class="cls-1" x1="73.53" y1="126.67" x2="25.89" y2="99.19"/>
+          <polyline class="cls-1" points="21.67 101.83 49.68 84.37 77.77 134.19"/>
+          <line class="cls-1" x1="49.68" y1="84.37" x2="153.25" y2="24.58"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

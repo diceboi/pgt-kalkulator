@@ -9,6 +9,7 @@
   --antracit: #3b413c;
   --white-border: #ffffff4a;
   --yellow-bg: #f7c82a0a;
+  --white-bg: #ffffff0a;
   --green-bg: #aaff350a;
   --grey-text: #d1d1d1;
   --orage: #e94e1b;
@@ -26,4 +27,63 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+  --value: 0%; /* Default slider value (percentage) */
+  --slider-color-before: var(--yellow-hover); /* Color for the filled portion of the track */
+  --slider-color-after: var(--antracit); /* Color for the unfilled portion of the track */
+  --thumb-glow: rgba(255, 223, 0, 0); /* Default glow effect for the thumb (transparent) */
+
+  appearance: none;
+  width: 100%;
+  height: 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--white-border);
+  background: linear-gradient(
+    to right,
+    var(--slider-color-before) var(--value),
+    var(--slider-color-after) 0
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-runnable-track {
+  appearance: none;
+  height: 1rem;
+  border-radius: 2rem;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  background: var(--yellow);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -0.5rem; /* Align thumb vertically with track */
+  box-shadow: 0 0 20px var(--thumb-glow); /* Dynamic glow effect */
+  transition: box-shadow 0.2s ease-in-out; /* Smooth glow transitions */
+}
+
+/* Firefox compatibility */
+.slider::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  background: var(--yellow);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--thumb-glow);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.slider::-moz-range-track {
+  height: 1rem;
+  border-radius: 2rem;
+  background: linear-gradient(
+    to right,
+    var(--slider-color-before) var(--value),
+    var(--slider-color-after) 0
+  );
 }

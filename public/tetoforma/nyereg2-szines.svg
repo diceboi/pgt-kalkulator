@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 205 205">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #f7931e;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #b3b3b3;
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+        stroke: url(#linear-gradient-2);
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1" y1="102.5" x2="204" y2="102.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#4d4d4d" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0" y1="102.5" x2="205" y2="102.5" gradientUnits="userSpaceOnUse">
+      <stop offset=".53" stop-color="#e94e1b"/>
+      <stop offset=".99" stop-color="#e94e1b"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="23.18" y1="64.16" x2="154.89" y2="64.16" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="51.22" y1="80.36" x2="183" y2="80.36" xlink:href="#linear-gradient-3"/>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-4" x="1" y="1" width="203" height="203" rx="12" ry="12"/>
+      <polyline class="cls-3" points="83.75 125.19 83.75 172.13 37.92 145.67 37.92 94.09"/>
+      <line class="cls-3" x1="167.5" y1="76.84" x2="167.5" y2="123.78"/>
+      <line class="cls-3" x1="83.75" y1="172.13" x2="167.5" y2="123.78"/>
+      <line class="cls-3" x1="79.15" y1="127.85" x2="182.82" y2="68"/>
+      <polyline class="cls-3" points="51.04 92.72 79.15 127.85 182.82 68 154.7 32.87"/>
+      <polygon class="cls-3" points="126.66 35.61 154.7 32.87 51.04 92.72 23 95.46 126.66 35.61"/>
+      <polygon class="cls-2" points="154.89 32.87 51.22 92.72 23.18 95.46 126.85 35.61 154.89 32.87"/>
+      <polygon class="cls-1" points="154.89 32.87 51.22 92.72 79.34 127.85 183 68 154.89 32.87"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 213.58 213.58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="213.58" height="213.58"/>
+    </clipPath>
+  </defs>
+  <g id="Réteg_1">
+    <g class="cls-4">
+      <g>
+        <polyline class="cls-3" points="107.84 151.42 107.84 194.43 173.93 156.81 173.93 114.26"/>
+        <polyline class="cls-3" points="62.37 168.17 42.74 156.82 42.74 109.32"/>
+        <polyline class="cls-3" points="80.34 178.54 107.83 194.45 107.83 151.42"/>
+        <polygon class="cls-3" points="181.79 104.4 109.05 146.19 70.64 60.92 143.38 19.13 181.79 104.4"/>
+        <polyline class="cls-3" points="31.8 102.88 70.64 60.92 143.38 19.13"/>
+        <polygon class="cls-3" points="37.23 106.22 31.8 102.88 70.64 60.92 70.37 67.59 37.23 106.22"/>
+        <polygon class="cls-3" points="103.1 143.34 109.05 146.19 70.64 60.92 70.37 67.59 103.1 143.34"/>
+        <polyline class="cls-3" points="164.26 120.51 164.26 142.22 153.13 148.58 153.13 126.87"/>
+        <polyline class="cls-3" points="147.33 130.13 147.33 151.84 136.21 158.2 136.21 136.49"/>
+        <polyline class="cls-3" points="130.46 139.7 130.46 161.41 119.33 167.76 119.33 146.06"/>
+        <polyline class="cls-3" points="50.31 119.3 50.31 140.78 61.44 147.14 61.44 125.66"/>
+        <polyline class="cls-3" points="85.64 139.81 85.64 161.29 96.76 167.65 96.76 146.17"/>
+        <polygon class="cls-3" points="71.55 183.53 58.26 175.86 58.26 170.28 71.55 177.95 71.55 183.53"/>
+        <polygon class="cls-3" points="75.94 175.7 62.65 168.03 62.65 162.45 75.94 170.12 75.94 175.7"/>
+        <polygon class="cls-3" points="75.94 175.7 62.65 168.03 58.26 170.28 71.55 177.95 75.94 175.7"/>
+        <polygon class="cls-3" points="80.33 167.87 67.04 160.2 62.65 162.45 75.94 170.12 80.33 167.87"/>
+        <polygon class="cls-3" points="80.33 167.87 80.33 178.66 71.55 183.53 71.55 177.95 75.94 175.7 75.94 170.12 80.33 167.87"/>
+        <polygon class="cls-3" points="80.33 167.87 67.04 160.2 67.04 129.48 80.33 137.15 80.33 167.87"/>
+        <path class="cls-3" d="M78.09,150.37c0,.59-.47,1.06-1.06,1.06s-1.06-.47-1.06-1.06.47-1.06,1.06-1.06h0c.59,0,1.06.47,1.06,1.06Z"/>
+        <line class="cls-3" x1="42.2" y1="103.64" x2="98.05" y2="134.95"/>
+        <polygon class="cls-1" points="93.92 54.75 78.1 63.83 111.36 137.66 126.79 128.8 93.92 54.75"/>
+        <polygon class="cls-1" points="158.96 110.32 174.34 101.48 141.08 27.65 126.09 36.26 158.96 110.32"/>
+        <polygon class="cls-1" points="109.7 45.68 94.79 54.24 127.66 128.3 142.57 119.73 109.7 45.68"/>
+        <polygon class="cls-1" points="125.22 36.76 110.58 45.18 143.45 119.23 158.09 110.82 125.22 36.76"/>
+      </g>
+    </g>
+  </g>
+</svg>

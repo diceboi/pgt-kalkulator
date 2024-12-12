@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 205 205">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-3);
+        stroke: #f7931e;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #b3b3b3;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        stroke: url(#linear-gradient-2);
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1" y1="102.5" x2="204" y2="102.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#4d4d4d" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0" y1="102.5" x2="205" y2="102.5" gradientUnits="userSpaceOnUse">
+      <stop offset=".53" stop-color="#e94e1b"/>
+      <stop offset=".99" stop-color="#e94e1b"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="22.33" y1="90.88" x2="182.67" y2="90.88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-3" x="1" y="1" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <polyline class="cls-2" points="84.9 151.61 84.9 174.84 36.33 146.8 36.33 101.04"/>
+        <line class="cls-2" x1="173.65" y1="101.04" x2="173.65" y2="123.6"/>
+        <line class="cls-2" x1="84.9" y1="174.84" x2="173.65" y2="123.6"/>
+        <polygon class="cls-2" points="182.67 95.3 120.1 30.16 22.33 86.47 84.9 151.61 182.67 95.3"/>
+      </g>
+      <polygon class="cls-1" points="22.33 86.47 84.9 151.61 182.67 95.3 120.1 30.16 22.33 86.47"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_3">
+    <g>
+      <path class="cls-2" d="M46.14,20.59l-3.41,3.44h-.01l-5.19,5.22c-5.65,5.66-11.92,7.32-17.57,7.34-3.54.01-6-.64-6-2.49,0-1.12.9-2.68,3.04-4.82l8.62-8.65,20.54-.02Z"/>
+      <path class="cls-2" d="M44.63,25.56l-2.42,2.41-4.69,4.7c-4.95,4.95-11.91,6.73-17.57,6.75-3.54.01-6-.98-6-2.83"/>
+      <line class="cls-2" x1="42.73" y1="24.02" x2="42.72" y2="24.02"/>
+      <line class="cls-2" x1="13.94" y1="36.58" x2="13.94" y2="34.09"/>
+      <polyline class="cls-2" points="44.62 27.97 46.15 26.34 46.15 24.02 46.15 20.58"/>
+      <line class="cls-2" x1="42.21" y1="27.97" x2="44.62" y2="27.97"/>
+    </g>
+    <rect class="cls-1" width="60" height="60"/>
+  </g>
+</svg>
