@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.19 177.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f7c82a;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Réteg_1">
+    <g>
+      <g>
+        <polyline class="cls-2" points="66.1 133.29 66.1 176.3 132.19 138.69 132.19 45.42 66.09 87.5"/>
+        <polyline class="cls-2" points="132.19 45.42 67.1 1 1 45.42"/>
+        <polygon class="cls-2" points="66.09 87.5 66.09 176.32 38.6 160.41 20.63 150.04 1 138.69 1 45.4 66.09 87.5"/>
+      </g>
+      <ellipse class="cls-2" cx="46.95" cy="54.04" rx="13.15" ry="7.66"/>
+      <path class="cls-2" d="M33.8,58.34c0,4.23,5.89,7.66,13.15,7.66s13.15-3.43,13.15-7.66"/>
+      <ellipse class="cls-2" cx="86.25" cy="32.09" rx="13.15" ry="7.66"/>
+      <path class="cls-2" d="M73.1,36.4c0,4.23,5.89,7.66,13.15,7.66s13.15-3.43,13.15-7.66"/>
+      <line class="cls-2" x1="33.8" y1="54.04" x2="33.8" y2="58.35"/>
+      <line class="cls-2" x1="60.1" y1="54.04" x2="60.1" y2="58.35"/>
+      <line class="cls-2" x1="73.1" y1="32.09" x2="73.1" y2="36.4"/>
+      <line class="cls-2" x1="99.4" y1="32.09" x2="99.4" y2="36.4"/>
+      <line class="cls-2" x1="49.41" y1="51.94" x2="44.48" y2="54.71"/>
+      <line class="cls-2" x1="49.23" y1="54.98" x2="44.66" y2="51.66"/>
+      <line class="cls-2" x1="88.71" y1="29.99" x2="83.78" y2="32.76"/>
+    </g>
+    <path class="cls-1" d="M95.39,136.39l4.22-16.18h-13.82c-.35,0-.56-.4-.36-.69l18.37-26.56c.28-.4.91-.11.78.36l-4.23,16.27h13.83c.35,0,.56.4.36.69l-18.37,26.48c-.28.4-.91.11-.78-.36Z"/>
+  </g>
+</svg>

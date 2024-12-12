@@ -10,6 +10,7 @@ import Egtajak from "./Egtajak"
 import Hajlasszog from "./Hajlasszog"
 import Magassag from "./Magassag"
 import Cim from "./Cim"
+import Akkumulator from "./Akkumulator"
 
 export default function Calculator() {
     const [page, setPage] = useState("1")
@@ -375,6 +376,7 @@ export default function Calculator() {
                     <Hajlasszog />
                     <Magassag />
                     <Cim />
+                    <Akkumulator />
 
 
                 </div>
