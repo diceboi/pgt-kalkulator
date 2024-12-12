@@ -7,6 +7,9 @@ import Paragraph from "./Typo/Paragraph"
 import Button from "./Typo/Button"
 import SecondaryButton from "./UI/SecondaryButton"
 import Egtajak from "./Egtajak"
+import Hajlasszog from "./Hajlasszog"
+import Magassag from "./Magassag"
+import Cim from "./Cim"
 
 export default function Calculator() {
     const [page, setPage] = useState("1")
@@ -369,6 +372,9 @@ export default function Calculator() {
                     )}
 
                     <Egtajak />
+                    <Hajlasszog />
+                    <Magassag />
+                    <Cim />
 
 
                 </div>
