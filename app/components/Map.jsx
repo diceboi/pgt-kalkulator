@@ -68,8 +68,6 @@ export default function MapComponent() {
 
     // Deactivate the drawing mode after the shape is drawn
     setDrawingMode(null);
-
-    console.log("Shape drawn:", newShape);
   };
 
   const deleteShape = (id) => {
@@ -154,7 +152,7 @@ export default function MapComponent() {
 
       {/* Shape Controls */}
       <div className="bg-[--antracit] p-4 mt-2">
-        <Paragraph classname="mb-2">Ha extra segítőkész akarsz lenni, kérlek az "Alakzat rajzolása" gomb-bal rajzold körbe az a felületet ahova a napelemrendszert szeretnéd."</Paragraph>
+        <Paragraph classname="mb-2">Ha extra segítőkész akarsz lenni, kérlek az &quot;Alakzat rajzolása&quot; gomb-bal rajzold körbe az a felületet ahova a napelemrendszert szeretnéd.</Paragraph>
         <div className="flex gap-2 mb-4">
           <button
             className="font-bold xl:text-sm text-xs tracking-wide border border-[--green] px-4 py-2 text-[--green] hover:bg-[--green] hover:text-[--black] transition-all rounded-3xl"

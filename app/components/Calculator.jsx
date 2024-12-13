@@ -11,6 +11,8 @@ import Hajlasszog from "./Hajlasszog"
 import Magassag from "./Magassag"
 import Cim from "./Cim"
 import Akkumulator from "./Akkumulator"
+import Tulpanelezes from "./Tulpanelezes"
+import Felhasznalas from "./Felhasznalas"
 
 export default function Calculator() {
     const [page, setPage] = useState("1")
@@ -377,7 +379,8 @@ export default function Calculator() {
                     <Magassag />
                     <Cim />
                     <Akkumulator />
-
+                    <Tulpanelezes />
+                    <Felhasznalas />
 
                 </div>
             </div>
