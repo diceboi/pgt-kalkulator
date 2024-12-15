@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ContextProvider from './Context';
+import { Toaster } from 'sonner'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -20,7 +21,8 @@ export default function RootLayout({ children }) {
       <ContextProvider>
         <body
           className={`${montserrat.className} antialiased `}
-        ><Nav />
+        ><Toaster position="bottom-center" richColors />
+          <Nav />
           {children}
         <Footer />
         </body>

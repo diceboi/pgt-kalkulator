@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Context } from "../Context";
 import H1 from "./Typo/H1";
 import H2 from "./Typo/H2";
 import H3 from "./Typo/H3";
@@ -8,6 +9,7 @@ import H4 from "./Typo/H4";
 import Paragraph from "./Typo/Paragraph";
 import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
+import MainButton from "./UI/MainButton";
 
 export default function Hajlasszog() {
   const angles = [
@@ -24,7 +26,8 @@ export default function Hajlasszog() {
     { value: 55, src: "/hajlasszog/55fok.svg" },
   ];
 
-  const [currentAngle, setCurrentAngle] = useState(5); // Default angle
+  const [currentAngle, setCurrentAngle] = useState(35); // Default angle
+  const { currentPage, setCurrentPage, hajlasszog, setHajlaszszog } = useContext(Context);
 
   const handleChange = (e) => {
     setCurrentAngle(parseInt(e.target.value, 10));
@@ -78,7 +81,12 @@ export default function Hajlasszog() {
           {currentAngle}°
         </p>
       </div>
-      <SecondaryButton>Tovább</SecondaryButton>
+      <div className="flex flex-nowrap justify-between items-center lg:w-1/2 w-full">
+        <SecondaryButton onclick={() => setCurrentPage("5")}>
+          Vissza
+        </SecondaryButton>
+        <MainButton onclick={() => setCurrentPage("7")}>Tovább</MainButton>
+      </div>
     </div>
   );
 }
