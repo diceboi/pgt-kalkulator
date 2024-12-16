@@ -17,8 +17,6 @@ export function MapProvider({ children }) {
     libraries: libraries,
   });
 
-  console.log("Google Maps API Key:", process.env.NEXT_PUBLIC_GOOGLE_MAP_API);
-
   if(loadError) return <p>Encountered error while loading google maps</p>
 
   if(!scriptLoaded) return <p>Map Script is loading ...</p>

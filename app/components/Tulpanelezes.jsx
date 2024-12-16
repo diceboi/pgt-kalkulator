@@ -10,62 +10,57 @@ import Paragraph from "./Typo/Paragraph";
 import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
+import RadioButton from "./UI/RadioButton";
 
 export default function Tulpanelezes() {
   const [currentHeight, setCurrentHeight] = useState(); // Default angle
-  const { currentPage, setCurrentPage } = useContext(Context);
+  const { currentPage, setCurrentPage, setTulpanelezes, tulpanelezes } =
+    useContext(Context);
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-8 min-h-[100vh]">
+      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
         <div className="flex flex-col gap-4 items-center">
-          <H3>Szeretnéd túlpanelezni a rendszert?</H3>
+          <H3 classname={"text-center text-white"}>
+            Szeretnéd túlpanelezni a rendszert?
+          </H3>
+          <Paragraph classname={"text-center text-white"}>
+            A rendszer jobb teljesítménye miatt akár +20%-kal is több napelem kerülhet a tetőre.
+          </Paragraph>
         </div>
 
-        <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[300px]">
-          {/* Display the current image */}
-          <img
-            src="/tulpanelezes/tulpanelezes.svg"
-            alt={`Magasság`}
-            className="w-[200px] h-auto"
-          />
-        </div>
-
-        {/* Display the current angle */}
-        <div className="flex flex-col gap-4 items-center">
-          <div className="relative flex flex-col gap-4 items-center">
-            <input
-              id="magassag"
-              name="magassag"
-              min="0"
-              type="checkbox"
-              className="px-8 py-2 bg-white rounded-md text-[--black] font-bold text-2xl w-28"
-            ></input>
-            <label
-              htmlFor="magassag"
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-[--black] z-10 h-auto"
-            >
-              Igen
-            </label>
+        <div className="flex flex-row items-center lg:gap-16 gap-8">
+          <div className="relative flex flex-col items-center justify-end w-full max-w-md">
+            <img
+              src="/tulpanelezes/tulpanelezes.svg"
+              alt={`Túlpanelezés`}
+              className="lg:w-[200px] w-[125px] h-auto"
+            />
           </div>
-          <div className="relative flex flex-col gap-4 items-center">
-            <input
-              id="magassag"
-              name="magassag"
-              min="0"
-              type="checkbox"
-              className="px-8 py-2 bg-white rounded-md text-[--black] font-bold text-2xl w-28"
-            ></input>
-            <label
-              htmlFor="magassag"
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-[--black] z-10 h-auto"
-            >
-              nem
-            </label>
+
+          <div className="flex flex-col gap-4 items-center">
+            <div className="grid lg:grid-cols-1 grid-cols-1 gap-8">
+              {["igen", "nem"].map((option) => {
+                // Mapping object for formatted names
+                const formattedNames = {
+                  igen: "Igen",
+                  nem: "Nem",
+                };
+
+                return (
+                  <RadioButton
+                    key={option}
+                    onclick={() => setTulpanelezes(option)}
+                    animate={tulpanelezes === option ? "checked" : "initial"}
+                    text={formattedNames[option] || option}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-nowrap justify-between items-center lg:w-1/2 w-full">
+      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <SecondaryButton onclick={() => setCurrentPage("9")}>
           Vissza
         </SecondaryButton>

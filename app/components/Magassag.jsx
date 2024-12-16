@@ -22,15 +22,15 @@ export default function Magassag() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-8 min-h-[100vh]">
+      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
         <div className="flex flex-col gap-4 items-center">
-          <H3>Milyen magasan van a tetőd?</H3>
-          <Paragraph>
+          <H3 classname={'text-center text-white'}>Milyen magasan van a tetőd?</H3>
+          <Paragraph classname={'text-center text-white'}>
             Írd be, hogy mekkora a távolság a talaj és az ereszvonal között.
           </Paragraph>
         </div>
 
-        <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[300px]">
+        <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[250px]">
           {/* Display the current image */}
           <img
             src="/epuletmagassag/magassag.svg"
@@ -41,7 +41,7 @@ export default function Magassag() {
 
         {/* Display the current angle */}
         <div className="flex flex-col gap-4 items-center">
-          <p className="text-lg font-semibold">Tető magasság: </p>
+          <H3 classname={'text-white text-center'}>Tető magasság: </H3>
           <div className="relative flex flex-col gap-4 items-center">
             <input
               id="magassag"
@@ -61,7 +61,7 @@ export default function Magassag() {
           </div>
         </div>
       </div>
-      <div className="flex flex-nowrap justify-between items-center lg:w-1/2 w-full">
+      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <SecondaryButton onclick={() => setCurrentPage("6")}>
           Vissza
         </SecondaryButton>

@@ -96,8 +96,8 @@ export default function MapComponent() {
   return (
     <>
       <div
-        style={{ width: "100%", height: "600px", position: "relative" }}
-        className="rounded-3xl lg:mb-32 mb-48"
+        style={{ width: "100%", height: "500px", position: "relative" }}
+        className="rounded-3xl lg:mb-32 mb-52 mt-20 px-4"
       >
         {/* Search Box */}
         <Autocomplete
@@ -115,9 +115,11 @@ export default function MapComponent() {
               zIndex: 10,
               width: "100%",
               padding: "10px",
+              width: "95%",
               borderRadius: "30px",
               border: "1px solid var(--white-border)",
               background: "transparent",
+              color: "#ffffff"
             }}
           />
         </Autocomplete>
@@ -164,20 +166,20 @@ export default function MapComponent() {
 
         {/* Shape Controls */}
         <div className="bg-[--antracit] p-4 mt-2">
-          <Paragraph classname="mb-2">
+          <Paragraph classname="mb-2 text-white">
             Ha extra segítőkész akarsz lenni, kérlek az &quot;Alakzat
             rajzolása&quot; gomb-bal rajzold körbe az a felületet ahova a
             napelemrendszert szeretnéd.
           </Paragraph>
-          <div className="flex gap-2 mb-4">
+          <div className="flex lg:flex-row flex-col gap-2 mb-4">
             <button
-              className="font-bold xl:text-sm text-xs tracking-wide border border-[--green] px-4 py-2 text-[--green] hover:bg-[--green] hover:text-[--black] transition-all rounded-3xl"
+              className="font-bold xl:text-sm text-xs tracking-wide border border-[--green] px-4 py-2 text-[--green] hover:bg-[--green] hover:text-[--black] transition-all rounded-3xl min-w-fit"
               onClick={() => setDrawingMode("polygon")}
             >
               Alakzat rajzolás
             </button>
             <button
-              className="font-bold xl:text-sm text-xs tracking-wide border border-red-500 px-4 py-2 text-red-500 hover:bg-red-500 hover:text-[--black] transition-all rounded-3xl"
+              className="font-bold xl:text-sm text-xs tracking-wide border border-red-500 px-4 py-2 text-red-500 hover:bg-red-500 hover:text-[--black] transition-all rounded-3xl min-w-fit"
               onClick={clearAllShapes}
             >
               Minden alakzat törlése
@@ -198,7 +200,7 @@ export default function MapComponent() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-nowrap justify-between items-center lg:w-1/2 w-full">
+      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <SecondaryButton onclick={() => setCurrentPage("7")}>
           Vissza
         </SecondaryButton>

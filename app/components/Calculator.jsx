@@ -25,8 +25,8 @@ export default function Calculator() {
 
     return (
         <section className="flex w-full lg:min-h-[80vh] bg-gradient-to-b from-[--black] to-[--antracit] py-2">
-            <div className="container m-auto lg:px-4 px-2">
-                <div className="flex flex-col items-center justify-center gap-8 border border-[--white-border] p-4 rounded-3xl w-full bg-[--antracit] shadow-2xl">
+            <div className="container m-auto">
+                <div className="flex flex-col items-center justify-center gap-8 lg:py-16 py-8 rounded-3xl w-full">
 
                 {currentPage === '1' && (
                     <Valaszto />

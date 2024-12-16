@@ -27,7 +27,8 @@ export default function Hajlasszog() {
   ];
 
   const [currentAngle, setCurrentAngle] = useState(35); // Default angle
-  const { currentPage, setCurrentPage, hajlasszog, setHajlaszszog } = useContext(Context);
+  const { currentPage, setCurrentPage, hajlasszog, setHajlaszszog } =
+    useContext(Context);
 
   const handleChange = (e) => {
     setCurrentAngle(parseInt(e.target.value, 10));
@@ -37,56 +38,62 @@ export default function Hajlasszog() {
     angles.find((angle) => angle.value === currentAngle)?.src || "";
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 min-h-[100vh]">
-      <div className="flex flex-col gap-4 items-center">
-        <H3>Mekkora a tetőd hajlásszöge?</H3>
-        <Paragraph>A csúszkával válaszd ki a tetőd hajlásszögét</Paragraph>
-      </div>
+    <>
+      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
+        <div className="flex flex-col gap-4 items-center">
+          <H3 classname={"text-center text-white"}>
+            Mekkora a tetőd hajlásszöge?
+          </H3>
+          <Paragraph classname={"text-center text-white"}>
+            A csúszkával válaszd ki a tetőd hajlásszögét
+          </Paragraph>
+        </div>
 
-      <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[300px]">
-        {/* Display the current image */}
-        <img
-          src={currentImage}
-          alt={`Roof angle ${currentAngle}°`}
-          draggable="false"
-          className="w-[200px] h-auto "
-        />
-      </div>
+        <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[250px]">
+          {/* Display the current image */}
+          <img
+            src={currentImage}
+            alt={`Roof angle ${currentAngle}°`}
+            draggable="false"
+            className="w-[200px] h-auto "
+          />
+        </div>
 
-      {/* Slider */}
-      <div className="relative w-full max-w-md">
-        <input
-          type="range"
-          min="5"
-          max="55"
-          step="5"
-          value={currentAngle}
-          onChange={handleChange}
-          className="w-full slider"
-        />
-        {/* Markers */}
-        <div className="flex justify-between mt-2 text-xs text-white">
-          {angles.map((angle) => (
-            <span key={angle.value} className="text-center">
-              {angle.value}°
-            </span>
-          ))}
+        {/* Slider */}
+        <div className="relative w-full max-w-md">
+          <input
+            type="range"
+            min="5"
+            max="55"
+            step="5"
+            value={currentAngle}
+            onChange={handleChange}
+            className="w-full slider"
+          />
+          {/* Markers */}
+          <div className="flex justify-between mt-2 text-xs text-white">
+            {angles.map((angle) => (
+              <span key={angle.value} className="text-center">
+                {angle.value}°
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Display the current angle */}
+        <div className="flex flex-col gap-4 items-center">
+          <H3 classname={"text-white text-center"}>Tető hajlásszög: </H3>
+          <p className="px-4 py-2 bg-white rounded-md text-[--black] font-bold text-2xl">
+            {currentAngle}°
+          </p>
         </div>
       </div>
-
-      {/* Display the current angle */}
-      <div className="flex flex-col gap-4 items-center">
-        <p className="text-lg font-semibold">Tető hajlásszög: </p>
-        <p className="px-4 py-2 bg-white rounded-md text-[--black] font-bold text-2xl">
-          {currentAngle}°
-        </p>
-      </div>
-      <div className="flex flex-nowrap justify-between items-center lg:w-1/2 w-full">
+      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <SecondaryButton onclick={() => setCurrentPage("5")}>
           Vissza
         </SecondaryButton>
         <MainButton onclick={() => setCurrentPage("7")}>Tovább</MainButton>
       </div>
-    </div>
+    </>
   );
 }
