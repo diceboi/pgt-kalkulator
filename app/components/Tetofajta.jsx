@@ -9,10 +9,16 @@ import MainButton from "./UI/MainButton";
 import ImageButton from "./UI/ImageButton";
 import { toast } from "sonner";
 
-export default function Tetofajta() {
+export default function Tetofajta({pageRef}) {
   const [page, setPage] = useState("1");
-  const { currentPage, setCurrentPage, tetofajta, setTetofajta } =
+  const { currentPage, setCurrentPage, tetofajta, setTetofajta, setTetofedoanyag, setHajlaszszog, setEgtaj, setMagassag } =
     useContext(Context);
+
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const containerVariants = {
     initial: { opacity: 0.5, scale: 1, background: "transparent" },
@@ -44,14 +50,15 @@ export default function Tetofajta() {
       initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
     >
       <div
-        className={`flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl`}
+        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow`}
       >
         <H3 classname={"text-center text-white"}>
           Válaszd ki a tetőd fajtáját
         </H3>
-        <div className="grid lg:grid-cols-5 grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-8">
           {[
             "nyereg",
             "felnyereg",
@@ -69,6 +76,7 @@ export default function Tetofajta() {
             "dobozos2",
             "osztott",
             "hajlitott",
+            "fold"
           ].map((option) => {
             // Mapping object for formatted names
             const formattedNames = {
@@ -88,6 +96,7 @@ export default function Tetofajta() {
               dobozos2: "Dobozos 2",
               osztott: "Osztott",
               hajlitott: "Hajlított",
+              fold: "Földre"
             };
 
             return (
@@ -104,15 +113,28 @@ export default function Tetofajta() {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("2")}>
+        <SecondaryButton onclick={() => {setCurrentPage("2"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
         <MainButton
           onclick={() => {
             if (!tetofajta) {
               toast.error("Kérjük, válaszd ki a tetőd fajtáját!");
+            } else if (tetofajta === "fold") {
+              setCurrentPage("8");
+              setTetofedoanyag("");
+              setHajlaszszog("");
+              setEgtaj("");
+              setMagassag("");
+              scrollToTop()
+            } else if (tetofajta === "lapos") {
+              setCurrentPage("6");
+              setTetofedoanyag("");
+              setHajlaszszog("");
+              scrollToTop()
             } else {
               setCurrentPage("4");
+              scrollToTop()
             }
           }}
         >

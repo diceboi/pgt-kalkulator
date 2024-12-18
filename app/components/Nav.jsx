@@ -14,9 +14,10 @@ export default function Nav() {
         <div className="sticky top-0 flex flex-col bg-[--black] w-full h-auto border-b border-[--white-border] px-4 z-50">
             <nav className="container m-auto flex flex-nowrap gap-4 min-h-[60px] items-center justify-between">
                 <Image src="/pgt-white-01.svg" height={100} width={91} alt="Profi Greentech logo" className="lg:w-[91px] w-[85px] h-auto" />
-                <H4 classname={"text-white uppercase"}>Napelem kalkulátor</H4>
+                <h4 className="text-white uppercase text-center leading-5 flex-grow">Napelem kalkulátor</h4>
                 <Link href="https://profigreentech.hu">
-                    <Button classname="lg:flex hidden flex-nowrap gap-2 hover:text-[--yellow] hover:underline"><HiArrowSmLeft />Vissza a főoldalra</Button>
+                    <Button classname="lg:flex hidden flex-nowrap gap-2 text-white hover:text-[--yellow] hover:underline"><HiArrowSmLeft />Vissza a főoldalra</Button>
+                    <Button classname="lg:hidden flex flex-nowrap gap-2 text-white hover:text-[--yellow] hover:underline"><HiArrowSmLeft /></Button>
                 </Link>
             </nav>
         </div>

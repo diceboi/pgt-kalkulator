@@ -11,6 +11,7 @@ import {
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import Paragraph from "./Typo/Paragraph";
+import { toast } from "sonner";
 
 const defaultMapContainerStyle = {
   width: "100%",
@@ -31,15 +32,44 @@ const defaultMapOptions = {
   mapTypeId: "satellite",
 };
 
-export default function MapComponent() {
+export default function MapComponent({pageRef}) {
   const [center, setCenter] = useState(defaultMapCenter); // Map center
   const [markerPosition, setMarkerPosition] = useState(defaultMapCenter); // Initial marker position
   const [shapes, setShapes] = useState([]); // State to store drawn shapes
   const [drawingMode, setDrawingMode] = useState(null); // Drawing mode (null = none)
   const mapRef = useRef(null); // Reference to the map
+  const inputRef = useRef(null);
   const autocompleteRef = useRef(null); // Reference for Autocomplete instance
-  const { currentPage, setCurrentPage } = useContext(Context);
+  const { currentPage, setCurrentPage, cim, setCim, googlemap, setGooglemap, tetofajta } =
+    useContext(Context);
 
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Google Maps link generálása a center állapotból
+  const generateGoogleMapsLink = (lat, lng) => {
+    return `https://www.google.com/maps?q=${lat},${lng}`;
+  };
+
+  // Középpont frissítése térkép mozgatásakor
+  const handleMapDragEnd = () => {
+    if (mapRef.current) {
+      const newCenter = {
+        lat: mapRef.current.getCenter().lat(),
+        lng: mapRef.current.getCenter().lng(),
+      };
+      setCenter(newCenter);
+      setMarkerPosition(newCenter);
+      setGooglemap(generateGoogleMapsLink(newCenter.lat, newCenter.lng));
+      console.log(cim);
+      console.log(googlemap);
+    }
+  };
+
+  // Kereséskor középpont frissítése
   const handlePlaceChanged = () => {
     if (autocompleteRef.current) {
       const place = autocompleteRef.current.getPlace();
@@ -50,19 +80,44 @@ export default function MapComponent() {
           lng: place.geometry.location.lng(),
         };
 
-        // Update the map center and marker position
+        // Cím és Google Maps link frissítése
         setCenter(location);
-        setMarkerPosition(location);
+        setCim(place.formatted_address || place.name);
+        setGooglemap(generateGoogleMapsLink(location.lat, location.lng));
+        console.log(cim);
+        console.log(googlemap);
       }
     }
   };
 
-  const handleMarkerDragEnd = (e) => {
-    const newPosition = {
-      lat: e.latLng.lat(),
-      lng: e.latLng.lng(),
-    };
-    setMarkerPosition(newPosition); // Update marker position state
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && inputRef.current) {
+      const inputValue = inputRef.current.value;
+
+      // Lekérjük a predikciókat
+      const service = new google.maps.places.AutocompleteService();
+      service.getPlacePredictions({ input: inputValue }, (predictions) => {
+        if (predictions && predictions.length > 0) {
+          const placeId = predictions[0].place_id;
+          const placesService = new google.maps.places.PlacesService(
+            mapRef.current
+          );
+
+          placesService.getDetails({ placeId }, (place) => {
+            if (place && place.geometry) {
+              const location = {
+                lat: place.geometry.location.lat(),
+                lng: place.geometry.location.lng(),
+              };
+
+              setCenter(location);
+              setCim(place.formatted_address || place.name);
+              setGooglemap(generateGoogleMapsLink(location.lat, location.lng));
+            }
+          });
+        }
+      });
+    }
   };
 
   const handleDrawingComplete = (shape) => {
@@ -105,8 +160,10 @@ export default function MapComponent() {
           onPlaceChanged={handlePlaceChanged}
         >
           <input
+            ref={inputRef}
             type="text"
             placeholder="Írd be a címet..."
+            onKeyDown={handleKeyDown}
             style={{
               position: "absolute",
               top: "-60px",
@@ -119,7 +176,7 @@ export default function MapComponent() {
               borderRadius: "30px",
               border: "1px solid var(--white-border)",
               background: "transparent",
-              color: "#ffffff"
+              color: "#ffffff",
             }}
           />
         </Autocomplete>
@@ -131,15 +188,15 @@ export default function MapComponent() {
           zoom={defaultMapZoom}
           options={defaultMapOptions}
           onLoad={(map) => (mapRef.current = map)} // Store map reference
+          onDragEnd={handleMapDragEnd}
         >
           {/* Draggable Marker */}
           <Marker
-            position={markerPosition}
-            draggable={true}
-            onDragEnd={handleMarkerDragEnd}
+            position={center} // A marker mindig az állapotban lévő középponton áll
+            draggable={false} // Nem mozgatható
           />
           {/* Drawing Manager */}
-          <DrawingManager
+          {/*<DrawingManager
             options={{
               drawingMode: drawingMode,
               drawingControl: false, // Disable built-in drawing control UI
@@ -161,11 +218,11 @@ export default function MapComponent() {
               },
             }}
             onOverlayComplete={(e) => handleDrawingComplete(e)}
-          />
+          />*/}
         </GoogleMap>
 
         {/* Shape Controls */}
-        <div className="bg-[--antracit] p-4 mt-2">
+        {/*<div className="bg-[--antracit] p-4 mt-2">
           <Paragraph classname="mb-2 text-white">
             Ha extra segítőkész akarsz lenni, kérlek az &quot;Alakzat
             rajzolása&quot; gomb-bal rajzold körbe az a felületet ahova a
@@ -198,13 +255,35 @@ export default function MapComponent() {
               </li>
             ))}
           </ul>
-        </div>
+        </div>*/}
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("7")}>
+        <SecondaryButton onclick={() => {
+          if (tetofajta === 'fold') {
+            setCurrentPage("3")
+            scrollToTop()
+          } else {
+            setCurrentPage("7")
+            scrollToTop()
+          }
+        }}>
           Vissza
         </SecondaryButton>
-        <MainButton onclick={() => setCurrentPage("9")}>Tovább</MainButton>
+        <MainButton
+          onclick={() => {
+            if (cim && googlemap) {
+              // Ellenőrzés, hogy van-e cim ÉS googlemap
+              setCurrentPage("9");
+              scrollToTop()
+            } else {
+              toast.error(
+                "Kérlek írj be egy címet a keresőmezőbe, nyomj entert, majd mozgasd a térképet úgy, hogy a piros jelölő a felület fölött legyen, ahova napelemeket szeretnél."
+              );
+            }
+          }}
+        >
+          Tovább
+        </MainButton>
       </div>
     </>
   );

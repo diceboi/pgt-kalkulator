@@ -18,12 +18,18 @@ import { toast } from "sonner";
 import MainButton from "./UI/MainButton";
 import ImageButton from "./UI/ImageButton";
 
-export default function Valaszto() {
+export default function Valaszto({pageRef}) {
   const [page, setPage] = useState("1");
   const [rendszer, setRendszer] = useState("lakossági");
 
   const { currentPage, setCurrentPage, valaszto, setValaszto } =
     useContext(Context);
+
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const containerVariants = {
     initial: { opacity: 0.5, scale: 1, background: "transparent" },
@@ -50,9 +56,9 @@ export default function Valaszto() {
   };
 
   return (
-    <motion.div id="page1">
+    <motion.div id="page1" className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between">
       <div
-        className={`flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl`}
+        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl self-center flex-grow`}
       >
         <H3 classname={"text-center text-white"}>
           Válassz, milyen rendszert szeretnél?
@@ -78,7 +84,7 @@ export default function Valaszto() {
           />
         </div>
       </div>
-      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
+      <div className="sticky bottom-0 self-end bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <MainButton
           classname={""}
           onclick={() => {
@@ -86,6 +92,7 @@ export default function Valaszto() {
               toast.error("Kérjük, válassz egy rendszert!");
             } else {
               setCurrentPage("2");
+              scrollToTop();
             }
           }}
         >

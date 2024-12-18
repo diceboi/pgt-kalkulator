@@ -30,7 +30,7 @@ export default function ImageButton({onclick, animate, baseImage, hoverImage, te
 
   return (
     <motion.label
-      className="relative rounded-xl lg:w-[150px] w-[100px] lg:h-[150px] h-[100px] cursor-pointer"
+      className="relative rounded-xl lg:w-[200px] w-[100px] lg:h-[200px] h-[100px] cursor-pointer"
       variants={containerVariants}
       initial="initial"
       whileHover="hover"

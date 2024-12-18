@@ -11,12 +11,12 @@ import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import RadioButton from "./UI/RadioButton";
+import ImageButton from "./UI/ImageButton";
 import { motion } from "framer-motion";
-import { toast } from "sonner";
 
-export default function Tulpanelezes({pageRef}) {
+export default function Tervek({pageRef}) {
   const [currentHeight, setCurrentHeight] = useState(); // Default angle
-  const { currentPage, setCurrentPage, setTulpanelezes, tulpanelezes } =
+  const { currentPage, setCurrentPage, tervek, setTervek } =
     useContext(Context);
 
   const scrollToTop = () => {
@@ -36,37 +36,29 @@ export default function Tulpanelezes({pageRef}) {
       <div className="flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow">
         <div className="flex flex-col gap-4 items-center">
           <H3 classname={"text-center text-white"}>
-            Szeretnéd túlpanelezni a rendszert?
+            Mik a jövőbeli terveid?
           </H3>
-          <Paragraph classname={"text-center text-white"}>
-            A rendszer jobb teljesítménye miatt akár +20%-kal is több napelem
-            kerülhet a tetőre.
-          </Paragraph>
         </div>
 
         <div className="flex flex-row items-center lg:gap-16 gap-8">
-          <div className="relative flex flex-col items-center justify-end w-full max-w-md">
-            <img
-              src="/tulpanelezes/tulpanelezes.svg"
-              alt={`Túlpanelezés`}
-              className="lg:w-[200px] w-[125px] h-auto"
-            />
-          </div>
 
           <div className="flex flex-col gap-4 items-center">
-            <div className="grid lg:grid-cols-1 grid-cols-1 gap-8">
-              {["igen", "nem"].map((option) => {
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+              {["elektromosauto", "hoszivattyu", "energiatarolo"].map((option) => {
                 // Mapping object for formatted names
                 const formattedNames = {
-                  igen: "Igen",
-                  nem: "Nem",
+                    elektromosauto: "Elektromos autó töltő",
+                    hoszivattyu: "Fűtés korszerüsítés",
+                    energiatarolo: "Energia tárolás",
                 };
 
                 return (
-                  <RadioButton
+                  <ImageButton
                     key={option}
-                    onclick={() => setTulpanelezes(option)}
-                    animate={tulpanelezes === option ? "checked" : "initial"}
+                    onclick={() => setTervek(option)}
+                    animate={tervek === option ? "checked" : "initial"}
+                    baseImage={`/tervek/${option}-feher.svg`}
+                    hoverImage={`/tervek/${option}-szines.svg`}
                     text={formattedNames[option] || option}
                   />
                 );
@@ -76,22 +68,10 @@ export default function Tulpanelezes({pageRef}) {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => {setCurrentPage("9"), scrollToTop()}}>
+        <SecondaryButton onclick={() => {setCurrentPage("11"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
-        <MainButton
-          onclick={() => {
-            if (tulpanelezes) {
-              // Ellenőrzés, hogy van-e cim ÉS googlemap
-              setCurrentPage("11");
-              scrollToTop()
-            } else {
-              toast.error("Kérlek válassz a lehetőségek közül.");
-            }
-          }}
-        >
-          Tovább
-        </MainButton>
+        <MainButton onclick={() => {setCurrentPage("13"), scrollToTop()}}>Tovább</MainButton>
       </div>
     </motion.div>
   );

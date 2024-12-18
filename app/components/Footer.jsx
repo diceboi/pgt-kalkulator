@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Footer() {
     return(
         <>
-        <div className="flex flex-col bg-[--black] border-t border-[--white-border] px-4 py-16">
+        <div className="flex flex-col bg-[--black] border-t border-[--white-border] px-4 py-16 text-white">
             <div className="container m-auto flex lg:flex-row flex-col lg:gap-0 gap-10">
 
                 <div className="flex flex-col gap-10 w-1/2">

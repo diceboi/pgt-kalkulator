@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.61 129.61">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Réteg_1">
+    <g>
+      <g>
+        <path class="cls-2" d="M81.6,75.79c-2.73,1.03-5.69,1.6-8.78,1.6-13.71,0-24.82-11.11-24.82-24.82s11.11-24.82,24.82-24.82c3.09,0,6.05.57,8.78,1.6-9.38,3.54-16.04,12.6-16.04,23.22s6.67,19.67,16.04,23.22Z"/>
+        <line class="cls-2" x1="23.87" y1="101.86" x2="105.74" y2="101.86"/>
+      </g>
+      <rect class="cls-1" width="129.61" height="129.61"/>
+    </g>
+  </g>
+</svg>

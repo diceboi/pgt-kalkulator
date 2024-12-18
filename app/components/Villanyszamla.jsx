@@ -16,7 +16,7 @@ import Akkumulator from "./Akkumulator";
 import Tulpanelezes from "./Tulpanelezes";
 import Felhasznalas from "./Felhasznalas";
 
-export default function Villanyszamla() {
+export default function Villanyszamla({pageRef}) {
   const [page, setPage] = useState("1");
   const [sliderValue, setSliderValue] = useState();
   const [showExtraInput, setShowExtraInput] = useState(false);
@@ -41,15 +41,22 @@ export default function Villanyszamla() {
     // Sync slider value with context
   });
 
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <motion.div
       id="page2"
       initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
     >
       <div
-        className={`flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl`}
+        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow`}
       >
         <div className="flex flex-col gap-4 items-center">
           <H3 classname={"text-center text-white"}>
@@ -208,6 +215,7 @@ export default function Villanyszamla() {
                     min="0"
                     max="9999999"
                     className="w-fit appearance-none bg-[--antracit] border border-[--white-border] h-10 rounded outline-none text-center text-white text-2xl py-2 pr-12"
+                    onChange={(e) => (setVillanyszamla(e.target.value), setVillanyszamlaUzleti(''), setVillanyszamlanagy(''))}
                   />
                   <motion.label
                     htmlFor="slider"
@@ -224,12 +232,12 @@ export default function Villanyszamla() {
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
         <SecondaryButton
           onclick={() => (
-            setCurrentPage("1"), setSliderValue("0"), setVillanyszamla("0")
+            setCurrentPage("1"), setSliderValue("0"), setVillanyszamla("0"), scrollToTop()
           )}
         >
           Vissza
         </SecondaryButton>
-        <MainButton onclick={() => setCurrentPage("3")}>Tovább</MainButton>
+        <MainButton onclick={() => {setCurrentPage("3"), scrollToTop()}}>Tovább</MainButton>
       </div>
     </motion.div>
   );

@@ -1,11 +1,6 @@
 "use client"
 
-import { useState, useContext } from "react"
-import { motion } from "framer-motion"
-import H3 from "./Typo/H3"
-import Paragraph from "./Typo/Paragraph"
-import Button from "./Typo/Button"
-import SecondaryButton from "./UI/SecondaryButton"
+import { useContext, useRef } from "react"
 import Egtajak from "./Egtajak"
 import Hajlasszog from "./Hajlasszog"
 import Magassag from "./Magassag"
@@ -18,48 +13,57 @@ import Villanyszamla from "./Villanyszamla"
 import Tetofajta from "./Tetofajta"
 import Tetofedoanyag from "./Tetofedoanyag"
 import { Context } from "../Context"
+import Tervek from "./Tervek"
+import Felhasznalo from "./Felhasznalo"
 
 export default function Calculator() {
 
     const { currentPage } = useContext(Context)
+    const pageRef = useRef(null);
 
     return (
-        <section className="flex w-full lg:min-h-[80vh] bg-gradient-to-b from-[--black] to-[--antracit] py-2">
+        <section ref={pageRef} className="flex w-full lg:min-h-[80vh] bg-gradient-to-b from-[--black] to-[--antracit] pt-2">
             <div className="container m-auto">
-                <div className="flex flex-col items-center justify-center gap-8 lg:py-16 py-8 rounded-3xl w-full">
+                <div className="flex flex-col items-center justify-center gap-8 lg:pt-16 pt-8 rounded-3xl w-full">
 
                 {currentPage === '1' && (
-                    <Valaszto />
+                    <Valaszto pageRef={pageRef} />
                 )}
                 {currentPage === '2' && (    
-                    <Villanyszamla />
+                    <Villanyszamla pageRef={pageRef} />
                 )}
                 {currentPage === '3' && (
-                    <Tetofajta />
+                    <Tetofajta pageRef={pageRef} />
                 )}
                 {currentPage === '4' && (
-                    <Tetofedoanyag />
+                    <Tetofedoanyag pageRef={pageRef} />
                 )}
                 {currentPage === '5' && (
-                    <Egtajak />
+                    <Hajlasszog pageRef={pageRef} />
                 )}
                 {currentPage === '6' && (
-                    <Hajlasszog />
+                    <Egtajak pageRef={pageRef} />
                 )}
                 {currentPage === '7' && (
-                    <Magassag />
+                    <Magassag pageRef={pageRef} />
                 )}
                 {currentPage === '8' && (
-                    <Cim />
+                    <Cim pageRef={pageRef} />
                 )}
                 {currentPage === '9' && (
-                    <Akkumulator />
+                    <Akkumulator pageRef={pageRef} />
                 )}
                 {currentPage === '10' && (
-                    <Tulpanelezes />
+                    <Tulpanelezes pageRef={pageRef} />
                 )}
                 {currentPage === '11' && (
-                    <Felhasznalas />
+                    <Felhasznalas pageRef={pageRef} />
+                )}
+                {currentPage === '12' && (
+                    <Tervek pageRef={pageRef} />
+                )}
+                {currentPage === '13' && (
+                    <Felhasznalo pageRef={pageRef} />
                 )}
                 </div>
             </div>

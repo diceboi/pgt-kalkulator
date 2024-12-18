@@ -14,9 +14,17 @@ export const Context = createContext({
   hajlasszog: '',
   magassag: '',
   cim: '',
+  googlemap: '',
   akkumulator: '',
   tulpanelezes: '',
   felhasznalas: '',
+  tervek: '',
+  vezeteknev: '',
+  keresztnev: '',
+  email: '',
+  telefonszam: '',
+  adatkezeles: '',
+  kampany: '',
   setCurrentPage: () => {},
   setCurrentPage: () => {},
   setValaszto: () => {},
@@ -29,9 +37,17 @@ export const Context = createContext({
   setHajlaszszog: () => {},
   setMagassag: () => {},
   setCim: () => {},
+  setGooglemap: () => {},
   setAkkumulator: () => {},
   setTulpanelezes: () => {},
-  setFelhasznalas: () => {}
+  setFelhasznalas: () => {},
+  setTervek: () => {},
+  setVezeteknev: () => {},
+  setKeresztnev: () => {},
+  setEmail: () => {},
+  setTelefonszam: () => {},
+  setAdatkezeles: () => {},
+  setKampany: () => {},
 });
 
 export default function ContextProvider({ children }) {
@@ -46,9 +62,17 @@ export default function ContextProvider({ children }) {
   const [hajlasszog, setHajlaszszog] = useState()
   const [magassag, setMagassag] = useState('4')
   const [cim, setCim] = useState()
+  const [googlemap, setGooglemap] = useState()
   const [akkumulator, setAkkumulator] = useState()
   const [tulpanelezes, setTulpanelezes] = useState()
   const [felhasznalas, setFelhasznalas] = useState()
+  const [tervek, setTervek] = useState()
+  const [vezeteknev, setVezeteknev] = useState()
+  const [keresztnev, setKeresztnev] = useState()
+  const [email, setEmail] = useState()
+  const [telefonszam, setTelefonszam] = useState()
+  const [adatkezeles, setAdatkezeles] = useState()
+  const [kampany, setKampany] = useState()
 
   return (
     <Context.Provider value={{
@@ -63,9 +87,17 @@ export default function ContextProvider({ children }) {
       hajlasszog,
       magassag,
       cim,
+      googlemap,
       akkumulator,
       tulpanelezes,
       felhasznalas,
+      tervek,
+      vezeteknev,
+      keresztnev,
+      email,
+      telefonszam,
+      adatkezeles,
+      kampany,
       setCurrentPage,
       setValaszto,
       setVillanyszamla,
@@ -77,9 +109,17 @@ export default function ContextProvider({ children }) {
       setHajlaszszog,
       setMagassag,
       setCim,
+      setGooglemap,
       setAkkumulator,
       setTulpanelezes,
-      setFelhasznalas
+      setFelhasznalas,
+      setTervek,
+      setVezeteknev,
+      setKeresztnev,
+      setEmail,
+      setTelefonszam,
+      setAdatkezeles,
+      setKampany
     }}>
       {children}
     </Context.Provider>

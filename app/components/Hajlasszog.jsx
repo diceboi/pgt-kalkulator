@@ -10,8 +10,9 @@ import Paragraph from "./Typo/Paragraph";
 import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
+import { motion } from "framer-motion";
 
-export default function Hajlasszog() {
+export default function Hajlasszog({pageRef}) {
   const angles = [
     { value: 5, src: "/hajlasszog/5fok.svg" },
     { value: 10, src: "/hajlasszog/10fok.svg" },
@@ -30,6 +31,12 @@ export default function Hajlasszog() {
   const { currentPage, setCurrentPage, hajlasszog, setHajlaszszog } =
     useContext(Context);
 
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const handleChange = (e) => {
     setCurrentAngle(parseInt(e.target.value, 10));
   };
@@ -38,8 +45,14 @@ export default function Hajlasszog() {
     angles.find((angle) => angle.value === currentAngle)?.src || "";
 
   return (
-    <>
-      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
+    <motion.div
+      id="page3"
+      initial={{ y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
+    >
+      <div className="flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow">
         <div className="flex flex-col gap-4 items-center">
           <H3 classname={"text-center text-white"}>
             Mekkora a tetőd hajlásszöge?
@@ -89,11 +102,11 @@ export default function Hajlasszog() {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("5")}>
+        <SecondaryButton onclick={() => {setCurrentPage("4"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
-        <MainButton onclick={() => setCurrentPage("7")}>Tovább</MainButton>
+        <MainButton onclick={() => {setCurrentPage("6"), scrollToTop()}}>Tovább</MainButton>
       </div>
-    </>
+    </motion.div>
   );
 }

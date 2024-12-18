@@ -12,15 +12,29 @@ import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import RadioButton from "./UI/RadioButton";
 import ImageButton from "./UI/ImageButton";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
 
-export default function Felhasznalas() {
+export default function Felhasznalas({pageRef}) {
   const [currentHeight, setCurrentHeight] = useState(); // Default angle
   const { currentPage, setCurrentPage, setFelhasznalas, felhasznalas } =
     useContext(Context);
 
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <>
-      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
+    <motion.div
+      id="page3"
+      initial={{ y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
+    >
+      <div className="flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow">
         <div className="flex flex-col gap-4 items-center">
           <H3 classname={"text-center text-white"}>
             Mikor használod a legtöbb áramot?
@@ -28,9 +42,8 @@ export default function Felhasznalas() {
         </div>
 
         <div className="flex flex-row items-center lg:gap-16 gap-8">
-
           <div className="flex flex-col gap-4 items-center">
-            <div className="grid lg:grid-cols-1 grid-cols-1 gap-8">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
               {["reggel", "delben", "este"].map((option) => {
                 // Mapping object for formatted names
                 const formattedNames = {
@@ -44,8 +57,8 @@ export default function Felhasznalas() {
                     key={option}
                     onclick={() => setFelhasznalas(option)}
                     animate={felhasznalas === option ? "checked" : "initial"}
-                    baseImage={`/felhasznalas/${option}.svg`}
-                    hoverImage={`/felhasznalas/${option}.svg`}
+                    baseImage={`/felhasznalas/${option}-feher.svg`}
+                    hoverImage={`/felhasznalas/${option}-szines.svg`}
                     text={formattedNames[option] || option}
                   />
                 );
@@ -55,11 +68,23 @@ export default function Felhasznalas() {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("10")}>
+        <SecondaryButton onclick={() => {setCurrentPage("10"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
-        <MainButton onclick={() => setCurrentPage("12")}>Tovább</MainButton>
+        <MainButton
+          onclick={() => {
+            if (felhasznalas) {
+              // Ellenőrzés, hogy van-e cim ÉS googlemap
+              setCurrentPage("12");
+              scrollToTop()
+            } else {
+              toast.error("Kérlek válassz a lehetőségek közül.");
+            }
+          }}
+        >
+          Tovább
+        </MainButton>
       </div>
-    </>
+    </motion.div>
   );
 }

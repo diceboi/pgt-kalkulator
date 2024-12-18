@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <ContextProvider>
         <body
           className={`${montserrat.className} antialiased `}
-        ><Toaster position="bottom-center" richColors />
+        ><Toaster position="bottom-center" richColors closeButton />
           <Nav />
           {children}
         <Footer />

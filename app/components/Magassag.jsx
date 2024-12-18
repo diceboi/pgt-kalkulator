@@ -10,22 +10,37 @@ import Paragraph from "./Typo/Paragraph";
 import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
+import { motion } from "framer-motion";
 
-export default function Magassag() {
-
-  const { currentPage, setCurrentPage, magassag, setMagassag } = useContext(Context);
+export default function Magassag({pageRef}) {
+  const { currentPage, setCurrentPage, magassag, setMagassag } =
+    useContext(Context);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setMagassag(value); // Update context value
   };
 
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <>
-      <div className="flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl">
+    <motion.div
+      id="page3"
+      initial={{ y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
+    >
+      <div className="flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow">
         <div className="flex flex-col gap-4 items-center">
-          <H3 classname={'text-center text-white'}>Milyen magasan van a tetőd?</H3>
-          <Paragraph classname={'text-center text-white'}>
+          <H3 classname={"text-center text-white"}>
+            Milyen magasan van a tetőd?
+          </H3>
+          <Paragraph classname={"text-center text-white"}>
             Írd be, hogy mekkora a távolság a talaj és az ereszvonal között.
           </Paragraph>
         </div>
@@ -41,7 +56,7 @@ export default function Magassag() {
 
         {/* Display the current angle */}
         <div className="flex flex-col gap-4 items-center">
-          <H3 classname={'text-white text-center'}>Tető magasság: </H3>
+          <H3 classname={"text-white text-center"}>Tető magasság: </H3>
           <div className="relative flex flex-col gap-4 items-center">
             <input
               id="magassag"
@@ -62,11 +77,11 @@ export default function Magassag() {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("6")}>
+        <SecondaryButton onclick={() => {setCurrentPage("6"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
-        <MainButton onclick={() => setCurrentPage("8")}>Tovább</MainButton>
+        <MainButton onclick={() => {setCurrentPage("8"), scrollToTop()}}>Tovább</MainButton>
       </div>
-    </>
+    </motion.div>
   );
 }

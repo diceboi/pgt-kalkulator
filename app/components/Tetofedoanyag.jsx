@@ -19,11 +19,17 @@ import { toast } from "sonner";
 import SendWebhook from "./SendWebhook";
 import ImageButton from "./UI/ImageButton";
 
-export default function Tetofedoanyag() {
+export default function Tetofedoanyag({pageRef}) {
   const [page, setPage] = useState("1");
   const [tetoforma, setTetoforma] = useState("");
   const { currentPage, setCurrentPage, tetofedoanyag, setTetofedoanyag } =
     useContext(Context);
+
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const containerVariants = {
     initial: { opacity: 0.5, scale: 1, background: "transparent" },
@@ -55,14 +61,15 @@ export default function Tetofedoanyag() {
       initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -10, opacity: 0 }}
+      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
     >
       <div
-        className={`flex flex-col items-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl`}
+        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow`}
       >
         <H3 classname={"text-center text-white"}>
           Válaszd ki a tetőfedő anyagod fajtáját
         </H3>
-        <div className="grid lg:grid-cols-5 grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-8">
           {[
             "bitumenes",
             "cserepeslemez",
@@ -109,7 +116,7 @@ export default function Tetofedoanyag() {
         </div>
       </div>
       <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => setCurrentPage("3")}>
+        <SecondaryButton onclick={() => {setCurrentPage("3"), scrollToTop()}}>
           Vissza
         </SecondaryButton>
         <MainButton
@@ -118,13 +125,13 @@ export default function Tetofedoanyag() {
               toast.error("Kérjük, válaszd ki a tetőfedő anyag típusát!");
             } else {
               setCurrentPage("5");
+              scrollToTop()
             }
           }}
         >
           Tovább
         </MainButton>
       </div>
-      <SendWebhook />
     </motion.div>
   );
 }
