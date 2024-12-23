@@ -1,54 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 205 205">
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
   <defs>
     <style>
       .cls-1 {
-        fill: url(#linear-gradient-3);
-        stroke: #f7931e;
-      }
-
-      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
         stroke-linecap: round;
         stroke-linejoin: round;
-      }
-
-      .cls-2 {
-        fill: none;
-        stroke: #b3b3b3;
         stroke-width: 5px;
       }
 
-      .cls-3 {
+      .cls-2 {
         fill: url(#linear-gradient);
-        stroke: url(#linear-gradient-2);
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
+        opacity: 0;
+      }
+
+      .cls-3 {
+        fill: url(#Névtelen_színátmenet_17);
       }
     </style>
-    <linearGradient id="linear-gradient" x1="1" y1="102.5" x2="204" y2="102.5" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#b3b3b3" stop-opacity=".1"/>
-      <stop offset="1" stop-color="#4d4d4d" stop-opacity=".1"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-2" x1="0" y1="102.5" x2="205" y2="102.5" gradientUnits="userSpaceOnUse">
-      <stop offset=".53" stop-color="#e94e1b"/>
-      <stop offset=".99" stop-color="#e94e1b"/>
-      <stop offset="1" stop-color="#e94e1b"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-3" x1="22.29" y1="77.56" x2="182.51" y2="77.56" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#e57253"/>
       <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="21.29" y1="76.56" x2="181.51" y2="76.56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
     </linearGradient>
   </defs>
   <g id="types_of_roofs">
     <g>
-      <rect class="cls-3" x="1" y="1" width="203" height="203" rx="12" ry="12"/>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
       <g>
-        <polyline class="cls-2" points="82.27 122.93 82.27 173.57 33.55 145.44 33.55 97.85"/>
-        <line class="cls-2" x1="171.3" y1="70.19" x2="171.3" y2="122.16"/>
-        <line class="cls-2" x1="82.27" y1="173.57" x2="171.3" y2="122.16"/>
-        <polygon class="cls-2" points="78.64 123.69 182.51 63.72 126.16 31.43 22.29 91.4 78.64 123.69"/>
+        <polyline class="cls-1" points="81.27 121.93 81.27 172.57 32.55 144.44 32.55 96.85"/>
+        <line class="cls-1" x1="170.3" y1="69.19" x2="170.3" y2="121.16"/>
+        <line class="cls-1" x1="81.27" y1="172.57" x2="170.3" y2="121.16"/>
+        <polygon class="cls-1" points="77.64 122.69 181.51 62.72 125.16 30.43 21.29 90.4 77.64 122.69"/>
       </g>
-      <polygon class="cls-1" points="22.29 91.4 126.16 31.43 182.51 63.72 78.64 123.69 22.29 91.4"/>
+      <polygon class="cls-3" points="21.29 90.4 125.16 30.43 181.51 62.72 77.64 122.69 21.29 90.4"/>
     </g>
   </g>
 </svg>

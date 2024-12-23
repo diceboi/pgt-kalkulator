@@ -49,6 +49,7 @@ export default function Felhasznalo({ pageRef }) {
     cegnev,
     email,
     telefonszam,
+    finanszirozas,
     adatkezeles,
     kampany,
     addPage,
@@ -57,6 +58,7 @@ export default function Felhasznalo({ pageRef }) {
     setCegnev,
     setEmail,
     setTelefonszam,
+    setFinanszirozas,
     setAdatkezeles,
     setKampany,
   } = useContext(Context);
@@ -114,6 +116,7 @@ export default function Felhasznalo({ pageRef }) {
       cegnev,
       email,
       telefonszam,
+      finanszirozas,
       adatkezeles,
       kampany,
     };
@@ -169,6 +172,19 @@ export default function Felhasznalo({ pageRef }) {
           value={telefonszam || ""}
           onChange={(e) => setTelefonszam(e.target.value)}
         />
+        <select
+          name="telefonszam"
+          className="w-full lg:w-1/2 bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+          placeholder="Válassz finanszírozási forrást"
+          value={finanszirozas || ''}
+          onChange={(e) => {setFinanszirozas(e.target.value), console.log(finanszirozas)}}
+        >
+          <option value="">Válassz finanszírozási formát</option>
+          <option value="Pályázat - céges">Céges pályázat</option>
+          <option value="Pályázat - lakossági">Lakossági pályázat</option>
+          <option value="Banki hitel">Banki hitel</option>
+          <option value="Önerő">Önerő</option>
+        </select>
         <div className="flex flex-nowrap items-start gap-2 lg:w-1/2 w-full mt-4">
           <input
             type="checkbox"
@@ -203,6 +219,7 @@ export default function Felhasznalo({ pageRef }) {
               keresztnev &&
               email &&
               telefonszam &&
+              finanszirozas &&
               adatkezeles === "igen"
             ) {
               toast.success("Sikeres beküldés!");

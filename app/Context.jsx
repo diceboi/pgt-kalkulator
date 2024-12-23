@@ -24,6 +24,7 @@ export const Context = createContext({
   cegnev: '',
   email: '',
   telefonszam: '',
+  finanszirozas: '',
   adatkezeles: '',
   kampany: '',
   setCurrentPage: () => {},
@@ -75,6 +76,7 @@ export default function ContextProvider({ children }) {
   const [cegnev, setCegnev] = useState()
   const [email, setEmail] = useState()
   const [telefonszam, setTelefonszam] = useState()
+  const [finanszirozas, setFinanszirozas] = useState()
   const [adatkezeles, setAdatkezeles] = useState()
   const [kampany, setKampany] = useState()
 
@@ -109,6 +111,7 @@ export default function ContextProvider({ children }) {
       cegnev,
       email,
       telefonszam,
+      finanszirozas,
       adatkezeles,
       kampany,
       setCurrentPage,
@@ -134,6 +137,7 @@ export default function ContextProvider({ children }) {
       setCegnev,
       setEmail,
       setTelefonszam,
+      setFinanszirozas,
       setAdatkezeles,
       setKampany
     }}>

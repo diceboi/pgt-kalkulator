@@ -36,8 +36,8 @@ export default function Igenyek() {
 
   return (
     <BaseContainer title={"Speciális igények"} subtitle={""}>
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-16">
-        <div id="akkumulator" className="flex flex-col lg:gap-16 gap-8">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-end">
+        <div id="akkumulator" className="flex flex-col lg:gap-16 gap-8 justify-between">
           <H4 classname={"text-center text-white"}>
             Szeretnél akkumulátort a rendszerhez?
           </H4>
@@ -118,7 +118,7 @@ export default function Igenyek() {
       </div>
       <div
         className={`${
-          magassag ? "flex" : "hidden"
+          akkumulator && tulpanelezes ? "flex" : "hidden"
         } bottom-0 p-4 flex-col justify-center items-center`}
       >
         <MainButton

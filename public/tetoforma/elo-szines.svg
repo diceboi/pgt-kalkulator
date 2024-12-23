@@ -4,36 +4,33 @@
     <style>
       .cls-1 {
         fill: none;
-        stroke: #b3b3b3;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
         stroke-width: 5px;
       }
 
-      .cls-1, .cls-2 {
-        stroke-linecap: round;
-        stroke-linejoin: round;
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: 0;
       }
 
       .cls-3 {
-        fill: url(#linear-gradient);
-      }
-
-      .cls-2 {
-        fill: url(#linear-gradient-2);
-        stroke: #f7931e;
+        fill: url(#Névtelen_színátmenet_17);
       }
     </style>
     <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#b3b3b3" stop-opacity=".1"/>
-      <stop offset="1" stop-color="#4d4d4d" stop-opacity=".1"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-2" x1="106.94" y1="130.36" x2="174.73" y2="130.36" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#e57253"/>
       <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="106.94" y1="130.36" x2="174.73" y2="130.36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
     </linearGradient>
   </defs>
   <g id="types_of_roofs">
     <g>
-      <rect class="cls-3" width="203" height="203" rx="12" ry="12"/>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
       <g>
         <g>
           <polyline class="cls-1" points="81.89 177.08 35.7 150.41 35.7 108.49"/>
@@ -54,7 +51,7 @@
           <line class="cls-1" x1="135.19" y1="158.08" x2="174.73" y2="135.22"/>
         </g>
       </g>
-      <polygon class="cls-2" points="106.94 125.49 146.47 102.63 174.73 135.22 135.19 158.08 106.94 125.49"/>
+      <polygon class="cls-3" points="106.94 125.49 146.47 102.63 174.73 135.22 135.19 158.08 106.94 125.49"/>
     </g>
   </g>
 </svg>

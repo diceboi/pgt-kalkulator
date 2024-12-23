@@ -1,66 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 205 205">
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
   <defs>
     <style>
       .cls-1 {
-        fill: url(#linear-gradient-4);
-      }
-
-      .cls-1, .cls-2 {
-        stroke: #f7931e;
-      }
-
-      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #000;
         stroke-linecap: round;
         stroke-linejoin: round;
-      }
-
-      .cls-2 {
-        fill: url(#linear-gradient-3);
-      }
-
-      .cls-3 {
-        fill: none;
-        stroke: #b3b3b3;
         stroke-width: 5px;
       }
 
-      .cls-4 {
+      .cls-2 {
         fill: url(#linear-gradient);
-        stroke: url(#linear-gradient-2);
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
+        opacity: 0;
+      }
+
+      .cls-3 {
+        fill: url(#Névtelen_színátmenet_17);
       }
     </style>
-    <linearGradient id="linear-gradient" x1="1" y1="102.5" x2="204" y2="102.5" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#b3b3b3" stop-opacity=".1"/>
-      <stop offset="1" stop-color="#4d4d4d" stop-opacity=".1"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-2" x1="0" y1="102.5" x2="205" y2="102.5" gradientUnits="userSpaceOnUse">
-      <stop offset=".53" stop-color="#e94e1b"/>
-      <stop offset=".99" stop-color="#e94e1b"/>
-      <stop offset="1" stop-color="#e94e1b"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-3" x1="21.67" y1="87.61" x2="182.71" y2="87.61" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#e57253"/>
       <stop offset="1" stop-color="#e94e1b"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-4" x1="38.24" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="37.24" y1="86.61" x2="181.71" y2="86.61" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
   </defs>
   <g id="types_of_roofs">
     <g>
-      <rect class="cls-4" x="1" y="1" width="203" height="203" rx="12" ry="12"/>
-      <line class="cls-3" x1="85.95" y1="133.21" x2="85.95" y2="170.88"/>
-      <line class="cls-3" x1="174.18" y1="95.09" x2="174.18" y2="119.94"/>
-      <line class="cls-3" x1="28.54" y1="93.26" x2="28.54" y2="137.73"/>
-      <line class="cls-3" x1="85.95" y1="170.88" x2="174.18" y2="119.94"/>
-      <line class="cls-3" x1="94.48" y1="141.1" x2="182.71" y2="90.16"/>
-      <line class="cls-3" x1="57.03" y1="154.18" x2="85.95" y2="170.88"/>
-      <line class="cls-3" x1="28.54" y1="137.73" x2="57.46" y2="154.43"/>
-      <polyline class="cls-3" points="38.24 85.06 21.67 99.07 38.24 85.06"/>
-      <polygon class="cls-3" points="126.48 34.12 38.24 85.06 94.48 141.1 182.71 90.16 126.48 34.12"/>
-      <polyline class="cls-2" points="38.24 85.06 21.67 99.07 38.24 85.06 94.48 141.1 182.71 90.16 126.48 34.12"/>
-      <polygon class="cls-1" points="126.48 34.12 38.24 85.06 94.48 141.1 182.71 90.16 126.48 34.12"/>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
+      <line class="cls-1" x1="84.95" y1="132.21" x2="84.95" y2="169.88"/>
+      <line class="cls-1" x1="173.18" y1="94.09" x2="173.18" y2="118.94"/>
+      <line class="cls-1" x1="27.54" y1="92.26" x2="27.54" y2="136.73"/>
+      <line class="cls-1" x1="84.95" y1="169.88" x2="173.18" y2="118.94"/>
+      <line class="cls-1" x1="93.48" y1="140.1" x2="181.71" y2="89.16"/>
+      <line class="cls-1" x1="56.03" y1="153.18" x2="84.95" y2="169.88"/>
+      <line class="cls-1" x1="27.54" y1="136.73" x2="56.46" y2="153.43"/>
+      <polyline class="cls-1" points="37.24 84.06 20.67 98.07 37.24 84.06"/>
+      <polygon class="cls-1" points="125.48 33.12 37.24 84.06 93.48 140.1 181.71 89.16 125.48 33.12"/>
+      <polygon class="cls-3" points="125.48 33.12 37.24 84.06 93.48 140.1 181.71 89.16 125.48 33.12"/>
     </g>
   </g>
 </svg>
