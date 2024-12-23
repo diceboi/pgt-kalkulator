@@ -32,7 +32,7 @@ const defaultMapOptions = {
   mapTypeId: "satellite",
 };
 
-export default function MapComponent({pageRef}) {
+export default function MapComponent() {
   const [center, setCenter] = useState(defaultMapCenter); // Map center
   const [markerPosition, setMarkerPosition] = useState(defaultMapCenter); // Initial marker position
   const [shapes, setShapes] = useState([]); // State to store drawn shapes
@@ -40,14 +40,17 @@ export default function MapComponent({pageRef}) {
   const mapRef = useRef(null); // Reference to the map
   const inputRef = useRef(null);
   const autocompleteRef = useRef(null); // Reference for Autocomplete instance
-  const { currentPage, setCurrentPage, cim, setCim, googlemap, setGooglemap, tetofajta } =
+  const { currentPage, addPage, cim, setCim, googlemap, setGooglemap, tetofajta } =
     useContext(Context);
 
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  const scrollToNext = (id) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }); // Delay idő milliszekundumban
+  }; 
 
   // Google Maps link generálása a center állapotból
   const generateGoogleMapsLink = (lat, lng) => {
@@ -152,7 +155,7 @@ export default function MapComponent({pageRef}) {
     <>
       <div
         style={{ width: "100%", height: "500px", position: "relative" }}
-        className="rounded-3xl lg:mb-32 mb-52 mt-20 px-4"
+        className="rounded-3xl  mt-20 px-4"
       >
         {/* Search Box */}
         <Autocomplete
@@ -257,33 +260,13 @@ export default function MapComponent({pageRef}) {
           </ul>
         </div>*/}
       </div>
-      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => {
-          if (tetofajta === 'fold') {
-            setCurrentPage("3")
-            scrollToTop()
-          } else {
-            setCurrentPage("7")
-            scrollToTop()
-          }
-        }}>
-          Vissza
-        </SecondaryButton>
-        <MainButton
-          onclick={() => {
-            if (cim && googlemap) {
-              // Ellenőrzés, hogy van-e cim ÉS googlemap
-              setCurrentPage("9");
-              scrollToTop()
-            } else {
-              toast.error(
-                "Kérlek írj be egy címet a keresőmezőbe, nyomj entert, majd mozgasd a térképet úgy, hogy a piros jelölő a felület fölött legyen, ahova napelemeket szeretnél."
-              );
-            }
-          }}
-        >
-          Tovább
-        </MainButton>
+      <div className={`${cim ? 'sticky' : 'hidden' } bottom-0 p-4 flex flex-col justify-center items-center`}>
+          <MainButton
+            onclick={() => {addPage('7'), scrollToNext('7')}}
+            classname={'animate-bounce'}
+          >
+            Tovább
+          </MainButton>
       </div>
     </>
   );

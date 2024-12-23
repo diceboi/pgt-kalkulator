@@ -9,20 +9,23 @@ import Button from "./Typo/Button";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import Egtajak from "./Egtajak";
-import Hajlasszog from "./Hajlasszog";
+import Hajlasszog from "./TetoParameterek";
 import Magassag from "./Magassag";
 import Cim from "./Cim";
-import Akkumulator from "./Akkumulator";
+import Akkumulator from "./Igenyek";
 import Tulpanelezes from "./Tulpanelezes";
 import Felhasznalas from "./Felhasznalas";
+import { debounce } from "lodash";
+import BaseContainer from "./UI/BaseContainer";
 
-export default function Villanyszamla({pageRef}) {
+export default function Villanyszamla({ }) {
   const [page, setPage] = useState("1");
   const [sliderValue, setSliderValue] = useState();
   const [showExtraInput, setShowExtraInput] = useState(false);
+  const [typingTimeout, setTypingTimeout] = useState(null);
   const {
     currentPage,
-    setCurrentPage,
+    addPage,
     villanyszamla,
     villanyszamlaUzleti,
     villanyszamlanagy,
@@ -41,32 +44,46 @@ export default function Villanyszamla({pageRef}) {
     // Sync slider value with context
   });
 
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setNumber(value);
+
+    // Clear the existing timeout
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
     }
+
+    // Set a new timeout
+    const timeout = setTimeout(() => {
+      addPage('3');
+      scrollToNext('3');
+      console.log("Triggered after last keystroke:", value);
+    }, 500); // 500ms delay
+
+    setTypingTimeout(timeout);
+  };
+
+  useEffect(() => {
+    // Clean up timeout on component unmount
+    return () => {
+      if (typingTimeout) {
+        clearTimeout(typingTimeout);
+      }
+    };
+  }, [typingTimeout]);
+
+  const scrollToNext = (id) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   };
 
   return (
-    <motion.div
-      id="page2"
-      initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
-    >
-      <div
-        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow`}
-      >
-        <div className="flex flex-col gap-4 items-center">
-          <H3 classname={"text-center text-white"}>
-            {valaszto === "Lakossági" && "Mennyi a havi villanyszámlád?"}
-            {valaszto === "Üzleti" && "Mennyi a havi villamosenergia igényed?"}
-          </H3>
-          <Paragraph classname={"text-center text-white"}>
-            Használd a csúszkát vagy írd be a konkrét összeget.
-          </Paragraph>
-        </div>
+
+        <BaseContainer title={valaszto === "Lakossági" ? "Mennyi a havi villanyszámlád?" : "Mennyi a havi villamosenergia igényed?"} subtitle={"Használd a csúszkát vagy írd be a konkrét összeget."}>
 
         <div className="flex flex-col items-center justify-center gap-8 lg:min-w-[500px] min-w-full">
           {/* Sliders */}
@@ -105,6 +122,7 @@ export default function Villanyszamla({pageRef}) {
                 className="slider w-1/2"
               />
 
+
               {/* Input Field */}
               <div className="relative flex flex-col gap-8">
                 <motion.input
@@ -119,6 +137,7 @@ export default function Villanyszamla({pageRef}) {
                     );
                     setSliderValue(newValue);
                     setVillanyszamla(newValue);
+                    handleChange
 
                     if (newValue === 200000) {
                       setShowExtraInput(true);
@@ -180,6 +199,7 @@ export default function Villanyszamla({pageRef}) {
                     );
                     setSliderValue(newValue);
                     setVillanyszamlaUzleti(newValue);
+                    handleChange
 
                     if (newValue === 50000) {
                       setShowExtraInput(true);
@@ -215,7 +235,7 @@ export default function Villanyszamla({pageRef}) {
                     min="0"
                     max="9999999"
                     className="w-fit appearance-none bg-[--antracit] border border-[--white-border] h-10 rounded outline-none text-center text-white text-2xl py-2 pr-12"
-                    onChange={(e) => (setVillanyszamla(e.target.value), setVillanyszamlaUzleti(''), setVillanyszamlanagy(''))}
+                    onChange={(e) => (setVillanyszamla(e.target.value), setVillanyszamlaUzleti(''), setVillanyszamlanagy(''), handleChange)}
                   />
                   <motion.label
                     htmlFor="slider"
@@ -228,17 +248,14 @@ export default function Villanyszamla({pageRef}) {
             </>
           )}
         </div>
+      <div className={`${villanyszamla || villanyszamlaUzleti || villanyszamlanagy == null ? 'flex' : 'hidden' } bottom-0 p-4 flex-col justify-center items-center`}>
+          <MainButton
+            onclick={() => {addPage('3'), scrollToNext('3')}}
+            classname={'animate-bounce'}
+          >
+            Tovább
+          </MainButton>
       </div>
-      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton
-          onclick={() => (
-            setCurrentPage("1"), setSliderValue("0"), setVillanyszamla("0"), scrollToTop()
-          )}
-        >
-          Vissza
-        </SecondaryButton>
-        <MainButton onclick={() => {setCurrentPage("3"), scrollToTop()}}>Tovább</MainButton>
-      </div>
-    </motion.div>
+      </BaseContainer>
   );
 }

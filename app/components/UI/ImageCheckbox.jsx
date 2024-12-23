@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 
-export default function ImageButton({onclick, animate, baseImage, hoverImage, text, value, classname}) {
+export default function ImageCheckbox({onclick, animate, baseImage, hoverImage, text, value, classname}) {
 
     const containerVariants = {
         initial: { opacity: .5, scale: 1, background: "#ffffff00" },
@@ -37,7 +37,7 @@ export default function ImageButton({onclick, animate, baseImage, hoverImage, te
       animate={animate}
     >
       <motion.input
-        type="radio"
+        type="checkbox"
         name="system"
         value={value}
         className="hidden"

@@ -11,9 +11,10 @@ import Label from "./Typo/Label";
 import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import { motion } from "framer-motion";
+import BaseContainer from "./UI/BaseContainer";
 
-export default function Magassag({pageRef}) {
-  const { currentPage, setCurrentPage, magassag, setMagassag } =
+export default function Magassag() {
+  const { currentPage, addPage, magassag, setMagassag } =
     useContext(Context);
 
   const handleInputChange = (e) => {
@@ -21,30 +22,22 @@ export default function Magassag({pageRef}) {
     setMagassag(value); // Update context value
   };
 
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const scrollToNext = (id) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }); // Delay idő milliszekundumban
   };
 
   return (
-    <motion.div
-      id="page3"
-      initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
-    >
-      <div className="flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow">
-        <div className="flex flex-col gap-4 items-center">
-          <H3 classname={"text-center text-white"}>
-            Milyen magasan van a tetőd?
-          </H3>
-          <Paragraph classname={"text-center text-white"}>
-            Írd be, hogy mekkora a távolság a talaj és az ereszvonal között.
-          </Paragraph>
-        </div>
-
+    <BaseContainer
+          title={"Milyen magasan van a tetőd?"}
+          subtitle={
+            "Írd be, hogy mekkora a távolság a talaj és az ereszvonal között."
+          }
+        >
         <div className="relative flex flex-col items-center justify-end w-full max-w-md min-h-[250px]">
           {/* Display the current image */}
           <img
@@ -75,13 +68,14 @@ export default function Magassag({pageRef}) {
             </label>
           </div>
         </div>
+      <div className={`${magassag ? 'flex' : 'hidden' } bottom-0 p-4 flex-col justify-center items-center`}>
+          <MainButton
+            onclick={() => {addPage('8'), scrollToNext('8')}}
+            classname={'animate-bounce'}
+          >
+            Tovább
+          </MainButton>
       </div>
-      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => {setCurrentPage("6"), scrollToTop()}}>
-          Vissza
-        </SecondaryButton>
-        <MainButton onclick={() => {setCurrentPage("8"), scrollToTop()}}>Tovább</MainButton>
-      </div>
-    </motion.div>
+    </BaseContainer>
   );
 }

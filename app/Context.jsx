@@ -21,12 +21,14 @@ export const Context = createContext({
   tervek: '',
   vezeteknev: '',
   keresztnev: '',
+  cegnev: '',
   email: '',
   telefonszam: '',
   adatkezeles: '',
   kampany: '',
   setCurrentPage: () => {},
-  setCurrentPage: () => {},
+  addPage: () => {},
+  removePage: () => {}, 
   setValaszto: () => {},
   setVillanyszamla: () => {},
   setVillanyszamlaUzleti: () => {},
@@ -44,6 +46,7 @@ export const Context = createContext({
   setTervek: () => {},
   setVezeteknev: () => {},
   setKeresztnev: () => {},
+  setCegnev: () => {},
   setEmail: () => {},
   setTelefonszam: () => {},
   setAdatkezeles: () => {},
@@ -59,20 +62,29 @@ export default function ContextProvider({ children }) {
   const [tetofajta, setTetofajta] = useState()
   const [tetofedoanyag, setTetofedoanyag] = useState()
   const [egtaj, setEgtaj] = useState(4)
-  const [hajlasszog, setHajlaszszog] = useState()
-  const [magassag, setMagassag] = useState('4')
+  const [hajlasszog, setHajlaszszog] = useState(4)
+  const [magassag, setMagassag] = useState(4)
   const [cim, setCim] = useState()
   const [googlemap, setGooglemap] = useState()
   const [akkumulator, setAkkumulator] = useState()
   const [tulpanelezes, setTulpanelezes] = useState()
   const [felhasznalas, setFelhasznalas] = useState()
-  const [tervek, setTervek] = useState()
+  const [tervek, setTervek] = useState([])
   const [vezeteknev, setVezeteknev] = useState()
   const [keresztnev, setKeresztnev] = useState()
+  const [cegnev, setCegnev] = useState()
   const [email, setEmail] = useState()
   const [telefonszam, setTelefonszam] = useState()
   const [adatkezeles, setAdatkezeles] = useState()
   const [kampany, setKampany] = useState()
+
+  const addPage = (page) => {
+    setCurrentPage((prev) => (prev.includes(page) ? prev : [...prev, page]));
+  };
+
+  const removePage = (page) => {
+    setCurrentPage((prev) => prev.filter((p) => p !== page));
+  };
 
   return (
     <Context.Provider value={{
@@ -94,11 +106,14 @@ export default function ContextProvider({ children }) {
       tervek,
       vezeteknev,
       keresztnev,
+      cegnev,
       email,
       telefonszam,
       adatkezeles,
       kampany,
       setCurrentPage,
+      addPage,
+      removePage,
       setValaszto,
       setVillanyszamla,
       setVillanyszamlaUzleti,
@@ -116,6 +131,7 @@ export default function ContextProvider({ children }) {
       setTervek,
       setVezeteknev,
       setKeresztnev,
+      setCegnev,
       setEmail,
       setTelefonszam,
       setAdatkezeles,

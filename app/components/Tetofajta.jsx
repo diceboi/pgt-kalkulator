@@ -8,64 +8,32 @@ import SecondaryButton from "./UI/SecondaryButton";
 import MainButton from "./UI/MainButton";
 import ImageButton from "./UI/ImageButton";
 import { toast } from "sonner";
+import BaseContainer from "./UI/BaseContainer";
 
-export default function Tetofajta({pageRef}) {
+export default function Tetofajta() {
   const [page, setPage] = useState("1");
-  const { currentPage, setCurrentPage, tetofajta, setTetofajta, setTetofedoanyag, setHajlaszszog, setEgtaj, setMagassag } =
+  const { currentPage, addPage, tetofajta, setTetofajta, setTetofedoanyag, setHajlaszszog, setEgtaj, setMagassag } =
     useContext(Context);
 
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  const containerVariants = {
-    initial: { opacity: 0.5, scale: 1, background: "transparent" },
-    hover: { opacity: 1, scale: 1.1, background: "#ffffff" },
-    checked: { opacity: 1, scale: 1.1, background: "#f0f0f0" },
-  };
-
-  const imageVariants1 = {
-    initial: { scale: 1, opacity: 1, x: "-50%", y: "-50%" },
-    hover: { scale: 0.95, opacity: 0, x: "-50%", y: "-60%" },
-    checked: { scale: 0.95, opacity: 0, x: "-50%", y: "-60%" },
-  };
-
-  const imageVariants2 = {
-    initial: { scale: 1, opacity: 0, x: "-50%", y: "-50%" },
-    hover: { scale: 0.95, opacity: 1, x: "-50%", y: "-60%" },
-    checked: { scale: 0.95, opacity: 1, x: "-50%", y: "-60%" },
-  };
-
-  const textVariants = {
-    initial: { opacity: 1, x: "-50%", y: "0%", color: "#ffffff" },
-    hover: { opacity: 1, x: "-50%", y: "0%", color: "#222" },
-    checked: { opacity: 1, x: "-50%", y: "0%", color: "#222" },
+  const scrollToNext = (id, delay = 1000) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, delay); // Delay idő milliszekundumban
   };
 
   return (
-    <motion.div
-      id="page3"
-      initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      className="w-full lg:min-h-[78vh] min-h-[85vh] flex flex-col justify-between"
-    >
-      <div
-        className={`flex flex-col items-center justify-center lg:gap-16 gap-8 pb-8 px-4 w-full rounded-2xl flex-grow`}
-      >
-        <H3 classname={"text-center text-white"}>
-          Válaszd ki a tetőd fajtáját
-        </H3>
-        <div className="grid lg:grid-cols-4 grid-cols-2 gap-8">
+    <BaseContainer title={"Válaszd ki a tetőd fajtáját."} subtitle={""}>
+        <div className="grid lg:grid-cols-6 grid-cols-3 gap-8">
           {[
             "nyereg",
             "felnyereg",
-            "sodobozos",
-            "lapos",
+            "eltoltnyereg",
             "mforma",
             "dobozos",
+            "dobozos2",
             "tagolt",
             "manzard",
             "manzard2",
@@ -73,16 +41,16 @@ export default function Tetofajta({pageRef}) {
             "pillango",
             "elo",
             "oromzatos-kontyolt",
-            "dobozos2",
             "osztott",
             "hajlitott",
-            "fold"
+            "fold",
+            "lapos",
           ].map((option) => {
             // Mapping object for formatted names
             const formattedNames = {
               nyereg: "Nyereg",
               felnyereg: "Félnyereg",
-              sodobozos: "Sodódozos",
+              eltoltnyereg: "Eltolt nyereg",
               lapos: "Lapos",
               mforma: "M Forma",
               dobozos: "Dobozos",
@@ -91,7 +59,7 @@ export default function Tetofajta({pageRef}) {
               manzard2: "Manzárd 2",
               sator: "Sátor",
               pillango: "Pillangó",
-              elo: "Elő",
+              elo: "Elő tető",
               "oromzatos-kontyolt": "Oromzatos Kontyolt",
               dobozos2: "Dobozos 2",
               osztott: "Osztott",
@@ -102,45 +70,16 @@ export default function Tetofajta({pageRef}) {
             return (
               <ImageButton
                 key={option}
-                onclick={() => setTetofajta(option)}
+                onclick={() => {setTetofajta(option), addPage('4'), scrollToNext('4')}}
                 animate={tetofajta === option ? "checked" : "initial"}
                 baseImage={`/tetoforma/${option}-feher.svg`}
                 hoverImage={`tetoforma/${option}-szines.svg`}
                 text={formattedNames[option] || option}
+                classname={"lg:w-[150px] w-[100px] lg:h-[150px] h-[100px]"}
               />
             );
           })}
         </div>
-      </div>
-      <div className="sticky bottom-0 bg-[--transparent] border-t border-[--white-border] bg-opacity-5 backdrop-blur-xl p-4 flex flex-nowrap justify-center gap-4 items-center w-full">
-        <SecondaryButton onclick={() => {setCurrentPage("2"), scrollToTop()}}>
-          Vissza
-        </SecondaryButton>
-        <MainButton
-          onclick={() => {
-            if (!tetofajta) {
-              toast.error("Kérjük, válaszd ki a tetőd fajtáját!");
-            } else if (tetofajta === "fold") {
-              setCurrentPage("8");
-              setTetofedoanyag("");
-              setHajlaszszog("");
-              setEgtaj("");
-              setMagassag("");
-              scrollToTop()
-            } else if (tetofajta === "lapos") {
-              setCurrentPage("6");
-              setTetofedoanyag("");
-              setHajlaszszog("");
-              scrollToTop()
-            } else {
-              setCurrentPage("4");
-              scrollToTop()
-            }
-          }}
-        >
-          Tovább
-        </MainButton>
-      </div>
-    </motion.div>
+      </BaseContainer>
   );
 }
