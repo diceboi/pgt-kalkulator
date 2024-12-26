@@ -52,11 +52,11 @@ export default function Igenyek() {
 
             <div className="flex flex-col gap-4 items-center">
               <div className="grid lg:grid-cols-1 grid-cols-1 gap-4">
-                {["igen", "nem"].map((option) => {
+                {["Igen  szeretnék akkumulátort", "Nem szeretnék akkumulátort"].map((option) => {
                   // Mapping object for formatted names
                   const formattedNames = {
-                    igen: "Igen",
-                    nem: "Nem",
+                    "Igen  szeretnék akkumulátort": "Igen",
+                    "Nem szeretnék akkumulátort": "Nem",
                   };
 
                   return (

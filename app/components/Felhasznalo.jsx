@@ -20,11 +20,6 @@ import { toast } from "sonner";
 import BaseContainer from "./UI/BaseContainer";
 
 export default function Felhasznalo({ pageRef }) {
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
 
   const searchParams = useSearchParams();
 
@@ -74,7 +69,7 @@ export default function Felhasznalo({ pageRef }) {
   const sendToWebhook = async (contextData) => {
     try {
       const response = await fetch(
-        "https://hook.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
+        "https://hok.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
         {
           method: "POST",
           headers: {
@@ -88,37 +83,37 @@ export default function Felhasznalo({ pageRef }) {
         console.log("Data sent successfully");
       } else {
         console.error("Failed to send data", await response.text());
+        
       }
     } catch (error) {
       console.error("Error sending data", error);
+      console.log(contextData)
     }
   };
 
   const handleSendData = () => {
     const dataToSend = {
-      valaszto,
-      villanyszamla,
-      villanyszamlaUzleti,
-      villanyszamlanagy,
+      VevoTipusa: valaszto,
+      HaviAramszamlaOsszege: villanyszamla,
+      HaviVillamosenergiaFogyasztasKwh: villanyszamlaUzleti,
+      HaviAramszamlaOsszege: villanyszamlanagy,
       tetofajta,
-      tetofedoanyag,
-      egtaj,
-      hajlasszog,
-      magassag,
-      cim,
-      googlemap,
-      akkumulator,
-      tulpanelezes,
-      felhasznalas,
-      tervek,
+      TetofedoAnyagFajtaja: tetofedoanyag,
+      TetofeluletIranya: egtaj,
+      HaztetoDolesszogeFok: hajlasszog,
+      EreszvonalMagassaga: magassag,
+      TelepitesCimeGoogleMapbol: cim,
+      CimGoogleLink: googlemap,
+      EnergiatarolasKell: akkumulator,
+      SzeretnedTulpanelezniARendszert: tulpanelezes,
+      Tervek5EvenBelul: tervek,
       vezeteknev,
       keresztnev,
-      cegnev,
-      email,
-      telefonszam,
-      finanszirozas,
+      SzerzodoCegNeve: cegnev,
+      Email: email,
+      Phone: telefonszam,
       adatkezeles,
-      kampany,
+      AjanlatkeresTipusa: kampany,
     };
 
     sendToWebhook(dataToSend);
@@ -206,7 +201,6 @@ export default function Felhasznalo({ pageRef }) {
               keresztnev &&
               email &&
               telefonszam &&
-              finanszirozas &&
               adatkezeles === "igen"
             ) {
               toast.success("Sikeres beküldés!");
