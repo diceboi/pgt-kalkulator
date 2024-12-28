@@ -250,7 +250,15 @@ export default function Villanyszamla({ }) {
         </div>
       <div className={`${villanyszamla || villanyszamlaUzleti || villanyszamlanagy == null ? 'flex' : 'hidden' } bottom-0 p-4 flex-col justify-center items-center`}>
           <MainButton
-            onclick={() => {addPage('3'), scrollToNext('3')}}
+            onclick={() => {
+              if(valaszto === "Üzleti") {
+                addPage('3'), 
+                scrollToNext('3')
+              } else {
+                addPage('4'),
+                scrollToNext('4')
+              }
+            }}
             classname={'animate-bounce'}
           >
             Tovább

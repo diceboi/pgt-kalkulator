@@ -41,14 +41,15 @@ export default function Tervek() {
     <BaseContainer title={"Vannak jövőbeli terveid?"} subtitle={"Több opció is választható"}>
       <div className="flex flex-row items-center lg:gap-16 gap-8">
         <div className="flex flex-col gap-4 items-center">
-          <div className="grid grid-cols-3 gap-8">
-            {["elektromosauto", "hoszivattyu", "energiatarolo"].map(
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8">
+            {["elektromosauto", "hoszivattyu", "energiatarolo", "klima"].map(
               (option) => {
                 // Mapping object for formatted names
                 const formattedNames = {
                   elektromosauto: "Elektromos autó töltő",
                   hoszivattyu: "Fűtés korszerüsítés",
                   energiatarolo: "Energia tárolás",
+                  klima: "Klíma"
                 };
 
                 return (
@@ -73,7 +74,7 @@ export default function Tervek() {
       <div className={`flex bottom-0 p-4 flex-col justify-center items-center`}>
         <MainButton
           onclick={() => {
-            addPage("9"), scrollToNext("9");
+            addPage("10"), scrollToNext("10");
           }}
           classname={"animate-bounce"}
         >

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-3" width="203" height="203" rx="12" ry="12"/>
+      <g id="Réteg_2-2" data-name="Réteg_2">
+        <g id="Réteg_1">
+          <polyline class="cls-1" points="34.19 131.28 28.67 128.09 28.67 91.27 56.09 99.27 87.23 125.1 96.04 120.01 104.85 114.92 113.69 109.81 122.36 104.8 131.25 99.66 140.07 94.56 148.91 89.46 157.35 84.57 166.41 79.35 174.3 74.78 174.33 111.69 87.23 161.98 87.21 161.99 80.64 158.18"/>
+          <polygon class="cls-1" points="143.24 48.54 135.31 53.15 126.59 58.22 117.81 63.34 109.09 68.42 100.26 73.55 91.58 78.61 82.91 83.66 74.24 88.7 65.56 93.75 56.09 99.27 28.67 91.27 63.96 70.91 72.72 65.86 81.49 60.79 115.79 41.01 143.24 48.54"/>
+          <polyline class="cls-1" points="87.23 161.99 87.23 161.98 87.23 125.21 56.09 99.27 65.56 93.75 74.24 88.7 82.91 83.66 91.58 78.61 100.26 73.55 109.09 68.42 117.81 63.34 126.59 58.22 135.31 53.15 143.24 48.54 174.3 74.78"/>
+          <polyline class="cls-1" points="80.64 158.18 80.64 137.67 52.12 121.42 46 117.88 34.19 111.05 34.19 124.83 34.19 131.28"/>
+          <polyline class="cls-2" points="107.82 45.62 135.31 53.15 166.5 79.42"/>
+          <polyline class="cls-2" points="98.9 50.77 126.59 58.23 157.44 84.65"/>
+          <polyline class="cls-2" points="90.47 55.64 117.72 63.26 149 89.53"/>
+          <polyline class="cls-2" points="81.13 60.7 108.97 68.33 140.08 94.56"/>
+          <polyline class="cls-2" points="72.53 65.8 99.97 73.32 131.34 99.73"/>
+          <polyline class="cls-2" points="63.92 70.91 91.37 78.43 122.36 104.8"/>
+          <polyline class="cls-2" points="55.32 76.01 82.76 83.53 113.68 109.82"/>
+          <polyline class="cls-2" points="46.71 81.11 74.16 88.64 104.93 114.98"/>
+          <polyline class="cls-2" points="38.11 86.22 65.55 93.74 96.48 120.39"/>
+          <line class="cls-1" x1="46" y1="117.88" x2="34.19" y2="124.83"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

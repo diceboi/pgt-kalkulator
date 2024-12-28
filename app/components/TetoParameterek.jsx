@@ -214,7 +214,7 @@ export default function TetoParameterek() {
       >
         <MainButton
           onclick={() => {
-            addPage("6"), scrollToNext("6");
+            addPage("7"), scrollToNext("7");
           }}
           classname={"animate-bounce"}
         >

@@ -70,7 +70,7 @@ export default function Tetofajta() {
             return (
               <ImageButton
                 key={option}
-                onclick={() => {setTetofajta(option), addPage('4'), scrollToNext('4')}}
+                onclick={() => {setTetofajta(option), addPage('5'), scrollToNext('5')}}
                 animate={tetofajta === option ? "checked" : "initial"}
                 baseImage={`/tetoforma/${option}-feher.svg`}
                 hoverImage={`tetoforma/${option}-szines.svg`}

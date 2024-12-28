@@ -8,6 +8,7 @@ export const Context = createContext({
   villanyszamla: '',
   villanyszamlaUzleti: '',
   villanyszamlanagy: '',
+  telepitesihely: '',
   tetofajta: '',
   tetofedoanyag: '',
   egtaj: '',
@@ -34,6 +35,7 @@ export const Context = createContext({
   setVillanyszamla: () => {},
   setVillanyszamlaUzleti: () => {},
   setVillanyszamlanagy: () => {},
+  setTelepitesihely: () => {},
   setTetofajta: () => {},
   setTetofedoanyag: () => {},
   setEgtaj: () => {},
@@ -60,6 +62,7 @@ export default function ContextProvider({ children }) {
   const [villanyszamla, setVillanyszamla] = useState()
   const [villanyszamlaUzleti, setVillanyszamlaUzleti] = useState()
   const [villanyszamlanagy, setVillanyszamlanagy] = useState('13000')
+  const [telepitesihely, setTelepitesihely] = useState()
   const [tetofajta, setTetofajta] = useState()
   const [tetofedoanyag, setTetofedoanyag] = useState()
   const [egtaj, setEgtaj] = useState(4)
@@ -95,6 +98,7 @@ export default function ContextProvider({ children }) {
       villanyszamla,
       villanyszamlaUzleti,
       villanyszamlanagy,
+      telepitesihely,
       tetofajta,
       tetofedoanyag,
       egtaj,
@@ -121,6 +125,7 @@ export default function ContextProvider({ children }) {
       setVillanyszamla,
       setVillanyszamlaUzleti,
       setVillanyszamlanagy,
+      setTelepitesihely,
       setTetofajta,
       setTetofedoanyag,
       setEgtaj,

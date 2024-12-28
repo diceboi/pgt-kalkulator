@@ -95,10 +95,10 @@ export default function Igenyek() {
 
             <div className="flex flex-col gap-4 items-center">
               <div className="grid lg:grid-cols-1 grid-cols-1 gap-4">
-                {["igen", "nem"].map((option) => {
+                {["igen  20%-kal", "nem"].map((option) => {
                   // Mapping object for formatted names
                   const formattedNames = {
-                    igen: "Igen",
+                    "igen  20%-kal": "Igen",
                     nem: "Nem",
                   };
 
@@ -123,7 +123,7 @@ export default function Igenyek() {
       >
         <MainButton
           onclick={() => {
-            addPage("8"), scrollToNext("8");
+            addPage("9"), scrollToNext("9");
           }}
           classname={"animate-bounce"}
         >

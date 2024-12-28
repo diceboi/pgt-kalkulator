@@ -69,7 +69,7 @@ export default function Felhasznalo({ pageRef }) {
   const sendToWebhook = async (contextData) => {
     try {
       const response = await fetch(
-        "https://hok.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
+        "https://hook.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
         {
           method: "POST",
           headers: {
@@ -112,7 +112,7 @@ export default function Felhasznalo({ pageRef }) {
       SzerzodoCegNeve: cegnev,
       Email: email,
       Phone: telefonszam,
-      adatkezeles,
+      UgyfelkapuKezeles: adatkezeles,
       AjanlatkeresTipusa: kampany,
     };
 
@@ -173,8 +173,8 @@ export default function Felhasznalo({ pageRef }) {
             name="acceptance"
             id="acceptance"
             className="p-4 text-lg bg-[--white] mt-1"
-            checked={adatkezeles === "igen"}
-            onChange={(e) => setAdatkezeles(e.target.checked ? "igen" : null)}
+            checked={adatkezeles === "Hozzájárulok az adataim kezeléséhez"}
+            onChange={(e) => setAdatkezeles(e.target.checked ? "Hozzájárulok az adataim kezeléséhez" : null)}
           />
           <label htmlFor="acceptance" className="text-white text-xs">
             Elolvastam, megértettem, és elfogadom az{" "}

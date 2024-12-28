@@ -262,7 +262,7 @@ export default function MapComponent() {
       </div>
       <div className={`${cim ? 'sticky' : 'hidden' } bottom-0 p-4 flex flex-col justify-center items-center`}>
           <MainButton
-            onclick={() => {addPage('7'), scrollToNext('7')}}
+            onclick={() => {addPage('8'), scrollToNext('8')}}
             classname={'animate-bounce'}
           >
             Tovább
