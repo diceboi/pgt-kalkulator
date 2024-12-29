@@ -201,7 +201,7 @@ export default function Felhasznalo({ pageRef }) {
               keresztnev &&
               email &&
               telefonszam &&
-              adatkezeles === "igen"
+              adatkezeles === "Hozzájárulok az adataim kezeléséhez"
             ) {
               toast.success("Sikeres beküldés!");
               handleSendData();
