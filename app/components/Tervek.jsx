@@ -69,34 +69,53 @@ export default function Tervek() {
               }
             )}
           </div>
-          {tervek.includes("Klíma") && (
-          <div className="flex flex-nowrap items-center gap-2 w-full mt-4">
-            <input
-              type="number"
-              name="klima"
-              id="klima"
-              className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
-              placeholder="Mekkora lakást klimatizálnál? (m²)"
-              value={klima || ""}
-              onChange={(e) => {setKlima(e.target.value), console.log("Klíma: ",klima)}}
-            />
-            <label htmlFor="klima">m²</label>
+          <div className="grid lg:grid-cols-4 grid-cols-1 lg:gap-8">
+            <div className="col-span-1 lg:w-[150px]">
+
+            </div>
+            
+            <div className="col-span-1 flex flex-nowrap items-baseline gap-2 lg:w-[150px] w-full mt-4">
+            {tervek.includes("Fűtés korszerüsítés") && (
+              <div className="flex flex-col gap-2">
+              <label htmlFor="futes" className="text-center">Mekkora lakást fűtenél? (m²)</label>
+              <input
+                type="number"
+                name="futes"
+                id="futes"
+                className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+                placeholder=""
+                value={futes || ""}
+                onChange={(e) => {setFutes(e.target.value), console.log("Fűtés: ",futes)}}
+              />
+              </div>
+            )}
+            </div>
+            
+            
+            <div className="col-span-1 lg:w-[150px]">
+
+            </div>
+            
+            <div className="col-span-1 flex flex-nowrap items-center gap-2 lg:w-[150px] w-full my-4">
+            {tervek.includes("Klíma") && (
+              <div className="flex flex-col gap-2">
+              <label htmlFor="klima" className="text-center">Mekkora lakást klimatizálnál? (m²)</label>
+              <input
+                type="number"
+                name="klima"
+                id="klima"
+                className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+                placeholder=""
+                value={klima || ""}
+                onChange={(e) => {setKlima(e.target.value), console.log("Klíma: ",klima)}}
+              />
+              
+              </div>
+            )}
+            </div>
+            
           </div>
-          )}
-          {tervek.includes("Fűtés korszerüsítés") && (
-          <div className="flex flex-nowrap items-center gap-2 w-full mt-4">
-            <input
-              type="number"
-              name="futes"
-              id="futes"
-              className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
-              placeholder="Mekkora lakást fűtenél? (m²)"
-              value={futes || ""}
-              onChange={(e) => {setFutes(e.target.value), console.log("Fűtés: ",futes)}}
-            />
-            <label htmlFor="futes">m²</label>
-          </div>
-          )}
+          
         </div>
         
       </div>
