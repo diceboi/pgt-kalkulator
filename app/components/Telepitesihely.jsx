@@ -48,8 +48,8 @@ export default function Telepitesihely() {
             return (
               <ImageButton
                 key={option}
-                onclick={() => {setTelepitesihely(option), addPage('4'), scrollToNext('4')}}
-                animate={telepitesihely === option ? "checked" : "initial"}
+                onclick={() => {setTelepitesihely(formattedNames[option]), addPage('4'), scrollToNext('4')}}
+                animate={telepitesihely === formattedNames[option] ? "checked" : "initial"}
                 baseImage={`/telepiteshelye/${option}-feher.svg`}
                 hoverImage={`telepiteshelye/${option}-szines.svg`}
                 text={formattedNames[option] || option}

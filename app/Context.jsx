@@ -20,6 +20,8 @@ export const Context = createContext({
   tulpanelezes: '',
   felhasznalas: '',
   tervek: '',
+  klima: '',
+  futes: '',
   vezeteknev: '',
   keresztnev: '',
   cegnev: '',
@@ -47,6 +49,8 @@ export const Context = createContext({
   setTulpanelezes: () => {},
   setFelhasznalas: () => {},
   setTervek: () => {},
+  setKlima: () => {},
+  setFutes: () => {},
   setVezeteknev: () => {},
   setKeresztnev: () => {},
   setCegnev: () => {},
@@ -61,7 +65,7 @@ export default function ContextProvider({ children }) {
   const [valaszto, setValaszto] = useState()
   const [villanyszamla, setVillanyszamla] = useState()
   const [villanyszamlaUzleti, setVillanyszamlaUzleti] = useState()
-  const [villanyszamlanagy, setVillanyszamlanagy] = useState('13000')
+  const [villanyszamlanagy, setVillanyszamlanagy] = useState()
   const [telepitesihely, setTelepitesihely] = useState()
   const [tetofajta, setTetofajta] = useState()
   const [tetofedoanyag, setTetofedoanyag] = useState()
@@ -74,6 +78,8 @@ export default function ContextProvider({ children }) {
   const [tulpanelezes, setTulpanelezes] = useState()
   const [felhasznalas, setFelhasznalas] = useState()
   const [tervek, setTervek] = useState([])
+  const [klima, setKlima] = useState()
+  const [futes, setFutes] = useState()
   const [vezeteknev, setVezeteknev] = useState()
   const [keresztnev, setKeresztnev] = useState()
   const [cegnev, setCegnev] = useState()
@@ -110,6 +116,8 @@ export default function ContextProvider({ children }) {
       tulpanelezes,
       felhasznalas,
       tervek,
+      futes,
+      klima,
       vezeteknev,
       keresztnev,
       cegnev,
@@ -137,6 +145,8 @@ export default function ContextProvider({ children }) {
       setTulpanelezes,
       setFelhasznalas,
       setTervek,
+      setFutes,
+      setKlima,
       setVezeteknev,
       setKeresztnev,
       setCegnev,

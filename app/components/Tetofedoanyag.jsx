@@ -73,8 +73,8 @@ export default function Tetofedoanyag({}) {
             return (
               <ImageButton
                 key={option}
-                onclick={() => {setTetofedoanyag(option), addPage('6'), scrollToNext('6')}}
-                animate={tetofedoanyag === option ? "checked" : "initial"}
+                onclick={() => {setTetofedoanyag(formattedNames[option]), addPage('6'), scrollToNext('6')}}
+                animate={tetofedoanyag === formattedNames[option] ? "checked" : "initial"}
                 baseImage={`/tetofedoanyag/${option}-feher.svg`}
                 hoverImage={`tetofedoanyag/${option}-szines.svg`}
                 text={formattedNames[option] || option}

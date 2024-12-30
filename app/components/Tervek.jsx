@@ -18,7 +18,7 @@ import BaseContainer from "./UI/BaseContainer";
 
 export default function Tervek() {
   const [currentHeight, setCurrentHeight] = useState(); // Default angle
-  const { currentPage, addPage, tervek, setTervek } = useContext(Context);
+  const { currentPage, addPage, tervek, setTervek, klima, setKlima, futes, setFutes } = useContext(Context);
 
   const scrollToNext = (id, delay = 1000) => {
     setTimeout(() => {
@@ -56,9 +56,9 @@ export default function Tervek() {
                   <ImageCheckbox
                   key={option}
                   onclick={() => {
-                    toggleTervek(option);
+                    toggleTervek(formattedNames[option]);
                   }}
-                  animate={tervek.includes(option) ? "checked" : "initial"}
+                  animate={tervek.includes(formattedNames[option]) ? "checked" : "initial"}
                   baseImage={`/tervek/${option}-feher.svg`}
                   hoverImage={`/tervek/${option}-szines.svg`}
                   text={formattedNames[option] || option}
@@ -69,7 +69,36 @@ export default function Tervek() {
               }
             )}
           </div>
+          {tervek.includes("Klíma") && (
+          <div className="flex flex-nowrap items-center gap-2 w-full mt-4">
+            <input
+              type="number"
+              name="klima"
+              id="klima"
+              className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+              placeholder="Mekkora lakást klimatizálnál? (m²)"
+              value={klima || ""}
+              onChange={(e) => {setKlima(e.target.value), console.log("Klíma: ",klima)}}
+            />
+            <label htmlFor="klima">m²</label>
+          </div>
+          )}
+          {tervek.includes("Fűtés korszerüsítés") && (
+          <div className="flex flex-nowrap items-center gap-2 w-full mt-4">
+            <input
+              type="number"
+              name="futes"
+              id="futes"
+              className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+              placeholder="Mekkora lakást fűtenél? (m²)"
+              value={futes || ""}
+              onChange={(e) => {setFutes(e.target.value), console.log("Fűtés: ",futes)}}
+            />
+            <label htmlFor="futes">m²</label>
+          </div>
+          )}
         </div>
+        
       </div>
       <div className={`flex bottom-0 p-4 flex-col justify-center items-center`}>
         <MainButton
