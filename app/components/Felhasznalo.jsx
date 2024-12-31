@@ -64,15 +64,32 @@ export default function Felhasznalo({ pageRef }) {
   useEffect(() => {
     const kampanyParam = searchParams.get("kampany");
     if (kampanyParam) {
-      setKampany(kampanyParam);
-      console.log(kampany);
+      let kampanyValue = "";
+      switch (kampanyParam) {
+        case "organikus":
+          kampanyValue = "Profigreentech indikatív ajánlatkérő";
+          break;
+        case "fullblack":
+          kampanyValue = "Full Black indikatív ajánlatkérő - Főoldalról";
+          break;
+        case "fullblack-zt":
+          kampanyValue = "Full Black indikatív ajánlatkérő - Zöldtrend";
+          break;
+        case "pgt-zt":
+          kampanyValue = "Profigreentech indikatív ajánlatkérő - Zöldtrend";
+          break;
+        default:
+          kampanyValue = kampanyParam;
+      }
+      setKampany(kampanyValue);
+      console.log("Beállított kampány érték:", kampanyValue);
     }
-  }, [searchParams, setKampany]);
+  }, [searchParams, setKampany]);  
 
   const sendToWebhook = async (contextData) => {
     try {
       const response = await fetch(
-        "https://hok.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
+        "https://hook.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
         {
           method: "POST",
           headers: {
@@ -215,7 +232,7 @@ export default function Felhasznalo({ pageRef }) {
             ) {
               toast.success("Sikeres beküldés!");
               handleSendData();
-              //window.location.replace("https://profigreentech.hu/koszonjuk");
+              window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
             } else {
               toast.error(
                 "Kérlek töltsd ki az összes kötelező mezőt, és fogadd el az adatkezelési nyilatkozatot."
