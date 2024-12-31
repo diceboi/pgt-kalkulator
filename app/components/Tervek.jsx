@@ -46,9 +46,9 @@ export default function Tervek() {
               (option) => {
                 // Mapping object for formatted names
                 const formattedNames = {
-                  elektromosauto: "Elektromos autó töltő",
+                  elektromosauto: "Elektromos autó",
                   hoszivattyu: "Fűtés korszerüsítés",
-                  energiatarolo: "Energia tárolás",
+                  energiatarolo: "Otthoni energiatároló",
                   klima: "Klíma"
                 };
 
