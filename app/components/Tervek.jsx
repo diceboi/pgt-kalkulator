@@ -75,7 +75,7 @@ export default function Tervek() {
             </div>
             
             <div className="col-span-1 flex flex-nowrap items-baseline gap-2 lg:w-[150px] w-full mt-4">
-            {tervek.includes("Fűtés korszerüsítés") && (
+            {tervek.includes("Fűtés korszerűsítés") && (
               <div className="flex flex-col gap-2">
               <label htmlFor="futes" className="text-center text-white">Mekkora lakást fűtenél? (m²)</label>
               <input
