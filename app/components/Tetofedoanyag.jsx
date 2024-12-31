@@ -40,6 +40,7 @@ export default function Tetofedoanyag({}) {
         <div className="grid lg:grid-cols-6 grid-cols-3 gap-8">
           {[
             "bitumenes",
+            "bitumenes-hullam",
             "zsindely",
             "cserepeslemez",
             "kozuzalekos-cserepeslemez",
@@ -51,22 +52,29 @@ export default function Tetofedoanyag({}) {
             "profilos-beton",
             "sik-beton",
             "sikpala",
+            "termespala",
+            "polikarbonat",
+            "egyeb",
             "hullam",
           ].map((option) => {
             // Mapping object for formatted names
             const formattedNames = {
-              bitumenes: "Bitumenes lemez",
-              cserepeslemez: "Cserepeslemez",
-              "hodfarku-keramia": "Hódfarkú kerámiacserép",
-              "hornyolt-keramia": "Hornyolt kerámiacserép",
-              hullam: "Hullámpala",
-              korcolt: "Korcolt lemez",
-              "kozuzalekos-cserepeslemez": "Kőzúzalékos cserepeslemez",
-              "profilos-beton": "Profilos betoncserép",
+              bitumenes: "Bitumenes zsindely",
+              "bitumenes-hullam": "Bitumenes hullámlemez", 
+              cserepeslemez: "Fémlemez fedés - cserepes lemez",
+              "hodfarku-keramia": "Kerámia cserép - hódfarkú vagy hornyolt",
+              "hornyolt-keramia": "Kerámia cserép - profilos  sajtolt",
+              hullam: "Pala - hullámpala",
+              korcolt: "Fémlemez fedés - korcolt lemez",
+              "kozuzalekos-cserepeslemez": "Fémlemez fedés - kőzúzalékos cserepes lemez",
+              "profilos-beton": "Betoncserép - sík vagy hullámos",
               "profilos-keramia": "Profilos kerámiacserép",
-              "sik-beton": "Sík betoncserép",
-              sikpala: "Síkpala",
-              trapezlemez: "Trapézlemez",
+              "sik-beton": "Betoncserép - sík vagy hullámos",
+              sikpala: "Pala - sík 40x40-es vagy kettős fedés",
+              termespala: "Pala - terméspala fedés", //
+              polikarbonat: "Polikarbonát fedés", //
+              egyeb: "Egyéb", //
+              trapezlemez: "Fémlemez fedés - trapézlemez",
               zsindely: "Zsindely",
             };
 

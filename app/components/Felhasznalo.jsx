@@ -95,6 +95,9 @@ export default function Felhasznalo({ pageRef }) {
   };
 
   const handleSendData = () => {
+
+    const currentDate = new Date().toISOString();
+
     const dataToSend = {
       VevoTipusa: valaszto,
       HaviAramszamlaOsszege: villanyszamla,
@@ -120,6 +123,7 @@ export default function Felhasznalo({ pageRef }) {
       Phone: telefonszam,
       UgyfelkapuKezeles: adatkezeles,
       AjanlatkeresTipusa: kampany,
+      AjanlatkeresBeerkezett: currentDate,
     };
 
     sendToWebhook(dataToSend);
@@ -211,7 +215,7 @@ export default function Felhasznalo({ pageRef }) {
             ) {
               toast.success("Sikeres beküldés!");
               handleSendData();
-              window.location.replace("https://profigreentech.hu/koszonjuk");
+              //window.location.replace("https://profigreentech.hu/koszonjuk");
             } else {
               toast.error(
                 "Kérlek töltsd ki az összes kötelező mezőt, és fogadd el az adatkezelési nyilatkozatot."

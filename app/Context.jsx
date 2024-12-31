@@ -30,6 +30,7 @@ export const Context = createContext({
   finanszirozas: '',
   adatkezeles: '',
   kampany: '',
+  datum: '',
   setCurrentPage: () => {},
   addPage: () => {},
   removePage: () => {}, 
@@ -58,6 +59,7 @@ export const Context = createContext({
   setTelefonszam: () => {},
   setAdatkezeles: () => {},
   setKampany: () => {},
+  setDatum: () => {},
 });
 
 export default function ContextProvider({ children }) {
@@ -69,7 +71,7 @@ export default function ContextProvider({ children }) {
   const [telepitesihely, setTelepitesihely] = useState()
   const [tetofajta, setTetofajta] = useState()
   const [tetofedoanyag, setTetofedoanyag] = useState()
-  const [egtaj, setEgtaj] = useState(4)
+  const [egtaj, setEgtaj] = useState()
   const [hajlasszog, setHajlaszszog] = useState(4)
   const [magassag, setMagassag] = useState(4)
   const [cim, setCim] = useState()
@@ -88,6 +90,7 @@ export default function ContextProvider({ children }) {
   const [finanszirozas, setFinanszirozas] = useState()
   const [adatkezeles, setAdatkezeles] = useState()
   const [kampany, setKampany] = useState()
+  const [datum, setDatum] = useState()
 
   const addPage = (page) => {
     setCurrentPage((prev) => (prev.includes(page) ? prev : [...prev, page]));
@@ -126,6 +129,7 @@ export default function ContextProvider({ children }) {
       finanszirozas,
       adatkezeles,
       kampany,
+      datum,
       setCurrentPage,
       addPage,
       removePage,
@@ -154,7 +158,8 @@ export default function ContextProvider({ children }) {
       setTelefonszam,
       setFinanszirozas,
       setAdatkezeles,
-      setKampany
+      setKampany,
+      setDatum
     }}>
       {children}
     </Context.Provider>

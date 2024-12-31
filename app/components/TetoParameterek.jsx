@@ -29,14 +29,14 @@ export default function TetoParameterek() {
   ];
 
   const directions = [
-    { name: "É", src: "/egtajak/eszak.svg" },
-    { name: "ÉK", src: "/egtajak/eszakkelet.svg" },
-    { name: "K", src: "/egtajak/kelet.svg" },
-    { name: "DK", src: "/egtajak/delkelet.svg" },
-    { name: "D", src: "/egtajak/del.svg" },
-    { name: "DNy", src: "/egtajak/delnyugat.svg" },
-    { name: "Ny", src: "/egtajak/nyugat.svg" },
-    { name: "ÉNy", src: "/egtajak/eszaknyugat.svg" },
+    { name: "Észak", short: "É", src: "/egtajak/eszak.svg" },
+    { name: "Északkelet", short: "ÉK", src: "/egtajak/eszakkelet.svg" },
+    { name: "Kelet", short: "K", src: "/egtajak/kelet.svg" },
+    { name: "Délkelet", short: "DK", src: "/egtajak/delkelet.svg" },
+    { name: "Dél", short: "D", src: "/egtajak/del.svg" },
+    { name: "Délnyugat", short: "DNy", src: "/egtajak/delnyugat.svg" },
+    { name: "Nyugat", short: "Ny", src: "/egtajak/nyugat.svg" },
+    { name: "Északnyugat", short: "ÉNy", src: "/egtajak/eszaknyugat.svg" },
   ];
 
   const [currentDirection, setCurrentDirection] = useState(4);
@@ -60,11 +60,15 @@ export default function TetoParameterek() {
   };
 
   const handleChangeAangle = (e) => {
-    setCurrentAngle(parseInt(e.target.value, 10));
+    const selectedAngle = parseInt(e.target.value, 10);
+    setCurrentAngle(selectedAngle);
+    setHajlaszszog(selectedAngle); // Frissítjük a hajlasszog state-et
   };
 
   const handleChangeDirection = (e) => {
-    setCurrentDirection(parseInt(e.target.value, 10));
+    const selectedIndex = parseInt(e.target.value, 10);
+    setCurrentDirection(selectedIndex);
+    setEgtaj(directions[selectedIndex].name); // Frissítjük az egtaj-t a name értékkel
   };
 
   const handleInputChange = (e) => {
@@ -157,10 +161,11 @@ export default function TetoParameterek() {
               className="w-full slider"
             />
             {/* Markers */}
+            {/* Markers */}
             <div className="flex justify-between mt-2 text-xs text-white">
               {directions.map((direction, index) => (
                 <span key={index} className="text-center">
-                  {direction.name}
+                  {direction.short} {/* Használjuk a rövidítéseket */}
                 </span>
               ))}
             </div>
