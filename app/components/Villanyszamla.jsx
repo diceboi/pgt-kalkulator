@@ -20,7 +20,7 @@ import BaseContainer from "./UI/BaseContainer";
 
 export default function Villanyszamla({ }) {
   const [page, setPage] = useState("1");
-  const [sliderValue, setSliderValue] = useState();
+  const [sliderValue, setSliderValue] = useState(0);
   const [showExtraInput, setShowExtraInput] = useState(false);
   const [typingTimeout, setTypingTimeout] = useState(null);
   const {
@@ -37,9 +37,9 @@ export default function Villanyszamla({ }) {
 
   useEffect(() => {
     if (valaszto === "Lakossági") {
-      setSliderValue(villanyszamla);
+      setSliderValue(villanyszamla || 0);
     } else {
-      setSliderValue(villanyszamlaUzleti);
+      setSliderValue(villanyszamlaUzleti || 0);
     }
     // Sync slider value with context
   });
@@ -99,6 +99,7 @@ export default function Villanyszamla({ }) {
                   const value = Number(e.target.value);
                   setSliderValue(value);
                   setVillanyszamla(value);
+                  console.log("Villanyszámla: ", villanyszamla)
 
                   // Calculate the percentage and update the CSS variable
                   const percentage = (value / 200000) * 100; // Assuming 200000 is the max value
@@ -138,6 +139,7 @@ export default function Villanyszamla({ }) {
                     setSliderValue(newValue);
                     setVillanyszamla(newValue);
                     handleChange
+                    console.log("Villanyszámla: ", villanyszamla)
 
                     if (newValue === 200000) {
                       setShowExtraInput(true);
@@ -169,6 +171,7 @@ export default function Villanyszamla({ }) {
                   const value = Number(e.target.value);
                   setSliderValue(value);
                   setVillanyszamlaUzleti(value);
+                  console.log("Villanyszámla üzleti: ", villanyszamlaUzleti)
 
                   // Calculate the percentage and update the CSS variable
                   const percentage = (value / 50000) * 100; // Assuming 200000 is the max value
@@ -200,6 +203,7 @@ export default function Villanyszamla({ }) {
                     setSliderValue(newValue);
                     setVillanyszamlaUzleti(newValue);
                     handleChange
+                    console.log("Villanyszámla üzleti: ", villanyszamlaUzleti)
 
                     if (newValue === 50000) {
                       setShowExtraInput(true);
@@ -235,7 +239,7 @@ export default function Villanyszamla({ }) {
                     min="0"
                     max="9999999"
                     className="w-fit appearance-none bg-[--antracit] border border-[--white-border] h-10 rounded outline-none text-center text-white text-2xl py-2 pr-12"
-                    onChange={(e) => (setVillanyszamla(e.target.value), setVillanyszamlaUzleti(''), setVillanyszamlanagy(''), handleChange)}
+                    onChange={(e) => (setVillanyszamla(e.target.value), setVillanyszamlaUzleti(''), setVillanyszamlanagy(''), handleChange, console.log("Villanyszámlák: ", villanyszamla), console.log("Villanyszámla: ", villanyszamlanagy) )}
                   />
                   <motion.label
                     htmlFor="slider"

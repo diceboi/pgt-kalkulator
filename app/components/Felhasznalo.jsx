@@ -89,7 +89,7 @@ export default function Felhasznalo({ pageRef }) {
   const sendToWebhook = async (contextData) => {
     try {
       const response = await fetch(
-        "https://hook.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
+        "https://hok.eu2.make.com/wsi49d36tk5q4eoork4hwyzlqud43s8i",
         {
           method: "POST",
           headers: {
@@ -117,9 +117,8 @@ export default function Felhasznalo({ pageRef }) {
 
     const dataToSend = {
       VevoTipusa: valaszto,
-      HaviAramszamlaOsszege: villanyszamla,
+      HaviAramszamlaOsszege: villanyszamlanagy || villanyszamla,
       HaviVillamosenergiaFogyasztasKwh: villanyszamlaUzleti,
-      HaviAramszamlaOsszege: villanyszamlanagy,
       TelepitesHelye: telepitesihely,
       HaztetoTipusa: tetofajta,
       TetofedoAnyagFajtaja: tetofedoanyag,
@@ -232,7 +231,7 @@ export default function Felhasznalo({ pageRef }) {
             ) {
               toast.success("Sikeres beküldés!");
               handleSendData();
-              window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
+              //window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
             } else {
               toast.error(
                 "Kérlek töltsd ki az összes kötelező mezőt, és fogadd el az adatkezelési nyilatkozatot."
