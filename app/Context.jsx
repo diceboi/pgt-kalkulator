@@ -89,7 +89,7 @@ export default function ContextProvider({ children }) {
   const [telefonszam, setTelefonszam] = useState()
   const [finanszirozas, setFinanszirozas] = useState()
   const [adatkezeles, setAdatkezeles] = useState()
-  const [kampany, setKampany] = useState()
+  const [kampany, setKampany] = useState('Profigreentech indikatív ajánlatkérő')
   const [datum, setDatum] = useState()
 
   const addPage = (page) => {
