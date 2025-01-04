@@ -23,11 +23,11 @@ export default function Footer() {
                     <Button>Gyors elérés</Button>
                     <ul className="flex flex-col gap-3">
                         <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Termékek</li></Link>
-                        <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Pályázatok</li></Link>
-                        <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Referenciák</li></Link>
-                        <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Rólunk</li></Link>
-                        <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Profi Kisokos</li></Link>
-                        <Link href="https://profigreentech.hu/termekek" className="hover:text-[--green] font-extralight"><li>Kapcsolat</li></Link>
+                        <Link href="https://profigreentech.hu/palyazatok" className="hover:text-[--green] font-extralight"><li>Pályázatok</li></Link>
+                        <Link href="https://profigreentech.hu/referenciak" className="hover:text-[--green] font-extralight"><li>Referenciák</li></Link>
+                        <Link href="https://profigreentech.hu/rolunk" className="hover:text-[--green] font-extralight"><li>Rólunk</li></Link>
+                        <Link href="https://profigreentech.hu/profi-kisokos" className="hover:text-[--green] font-extralight"><li>Profi Kisokos</li></Link>
+                        <Link href="https://profigreentech.hu/kapcsolat" className="hover:text-[--green] font-extralight"><li>Kapcsolat</li></Link>
                     </ul>
                 </div>
 
