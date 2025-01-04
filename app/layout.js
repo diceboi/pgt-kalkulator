@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ContextProvider from './Context';
 import { Toaster } from 'sonner'
+import {GoogleAnalytics} from "@next/third-parties/google"
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
           {children}
         <Footer />
         </body>
+        <GoogleAnalytics gaId='G-JV1RD9PM34' />
       </ContextProvider>
     </html>
   );
