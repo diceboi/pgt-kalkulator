@@ -231,7 +231,11 @@ export default function Felhasznalo({ pageRef }) {
             ) {
               toast.success("Sikeres beküldés!");
               handleSendData();
-              window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
+              if (valaszto === 'Lakossági') {
+                window.location.replace("https://profigreentech.hu/koszonjuk-lakossagi");
+              } else {
+                window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
+              }
             } else {
               toast.error(
                 "Kérlek töltsd ki az összes kötelező mezőt, és fogadd el az adatkezelési nyilatkozatot."
