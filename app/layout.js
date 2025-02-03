@@ -19,16 +19,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ContextProvider>
+      
         <body
           className={`${montserrat.className} antialiased `}
-        ><Toaster position="bottom-center" richColors closeButton />
+        >
+        <ContextProvider>
+            <Toaster position="bottom-center" richColors closeButton />
           <Nav />
           {children}
         <Footer />
+        </ContextProvider>
         </body>
         <GoogleAnalytics gaId='G-JV1RD9PM34' />
-      </ContextProvider>
+      
     </html>
   );
 }

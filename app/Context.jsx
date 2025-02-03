@@ -1,6 +1,14 @@
 'use client'
 
 import { createContext, useState } from "react";
+import Modal from "./components/UI/Modal"
+import H3 from "./components/Typo/H3";
+import H1 from "./components/Typo/H1";
+import Paragraph from "./components/Typo/Paragraph";
+import H2 from "./components/Typo/H2";
+import { TbAlertTriangle, TbCircleCheckFilled } from "react-icons/tb";
+import H4 from "./components/Typo/H4";
+import MainButton from "./components/UI/MainButton";
 
 export const Context = createContext({
   currentPage: '',
@@ -60,6 +68,12 @@ export const Context = createContext({
   setAdatkezeles: () => {},
   setKampany: () => {},
   setDatum: () => {},
+
+  openPopup: null,
+  togglePopup: () => {},
+  setOpenPopup: () => {},
+  form: 'login',
+  setForm: () => {},
 });
 
 export default function ContextProvider({ children }) {
@@ -92,12 +106,19 @@ export default function ContextProvider({ children }) {
   const [kampany, setKampany] = useState('Profigreentech indikatív ajánlatkérő')
   const [datum, setDatum] = useState()
 
+  const [openPopup, setOpenPopup] = useState(null);
+  const [form, setForm] = useState('login');
+
   const addPage = (page) => {
     setCurrentPage((prev) => (prev.includes(page) ? prev : [...prev, page]));
   };
 
   const removePage = (page) => {
     setCurrentPage((prev) => prev.filter((p) => p !== page));
+  };
+
+  const togglePopup = (popupName) => {
+    setOpenPopup((prevPopup) => (prevPopup === popupName ? null : popupName));
   };
 
   return (
@@ -159,9 +180,60 @@ export default function ContextProvider({ children }) {
       setFinanszirozas,
       setAdatkezeles,
       setKampany,
-      setDatum
+      setDatum,
+
+      openPopup,
+      togglePopup,
+      setOpenPopup,
+      form,
+      setForm,
     }}>
       {children}
+      <Modal
+        openstate={openPopup}
+        onClose={() => togglePopup(null)}
+      >
+        <>
+
+        {form === "finanszirozas" && (
+            <div className="flex flex-col gap-4">
+              <TbAlertTriangle className="text-[--yellow] min-w-12 h-auto self-center"/>
+              <div className="flex flex-row gap-2 items-start">
+                <H2 classname={'text-yellow text-center pb-4'}> Csak egy fontos kérdés mielőtt továbblépsz</H2>
+              </div>
+              <H3 classname={'text-center pb-8'}>A <span className="text-[--green] font-bold">Vidéki Otthonfelújítási Programból</span> szeretnéd finanszírozni a napelem rendszert?</H3>
+              <span className="font-light text-2xl pb-4 text-center"> Gyorsan fusd át a feltételeket, hogy megelelsz-e:</span>
+              <div className="space-y-4 p-4 bg-[--black] rounded-2xl">
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>5000 főnél kevesebb lakosú településen lévő ingatlanban állandó lakcím.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Legalább egy 25 év alatti eltartott gyermek a háztartásban.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Az ingatlan tulajdonjoga a pályázónál vagy házastársánál.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Felújítási munkák: napelem, szigetelés, tetőfelújítás, nyílászárócsere stb.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Max. 3 millió Ft támogatás, az összköltség 50%-áig.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Nincs közüzemi vagy hiteltartozás.</H4>
+              <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Szükséges dokumentumok (TB-igazolás, számlák).</H4>
+              </div>
+              <div className="flex flex-col gap-2 pt-8">
+                <MainButton
+                  onclick={() => {setFinanszirozas('Pályázat - 50% Vidéki otthonfelújítási program'), togglePopup('finanszirozas')}}
+                >
+                  Igen, a VOP-ból szeretném finanszírozni
+                </MainButton>
+                <MainButton
+                  onclick={() => {setFinanszirozas('Önerő'), togglePopup('finanszirozas')}}
+                >
+                  Nem, önerőből szeretném finanszírozni
+                </MainButton>
+                <MainButton
+                  onclick={() => {setFinanszirozas('Nem tudom'), togglePopup('finanszirozas')}}
+                  classname={'bg-transparent text-[--yellow]'}
+                >
+                  Nem tudom
+                </MainButton>
+              </div>
+            </div>
+          )}
+        </>
+      </Modal>
     </Context.Provider>
   );
 }
