@@ -196,7 +196,7 @@ export default function ContextProvider({ children }) {
         <>
 
         {form === "finanszirozas" && (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-white">
               <TbAlertTriangle className="text-[--yellow] min-w-12 h-auto self-center"/>
               <div className="flex flex-row gap-2 items-start">
                 <H2 classname={'text-yellow text-center pb-4'}> Csak egy fontos kérdés mielőtt továbblépsz</H2>
