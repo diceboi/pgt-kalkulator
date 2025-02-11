@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata = {
-  title: "Napelem rendszer Kalkulátor - Profi Greentech",
+  title: "Energiafelhasználási audit napelem rendszerhez - Profi Greentech",
   description: "",
 };
 

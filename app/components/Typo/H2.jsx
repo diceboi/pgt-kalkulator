@@ -8,7 +8,7 @@ export default function H2({children, classname}) {
     initial={{ opacity: 0, y: -10 }}
     whileInView={{ opacity: 1, y:0 }}
     transition={{ duration: 0.4, bounce: "spring" }}
-    className={`font-bold xl:text-5xl md:text-4xl text-3xl tracking-tighter ${classname}`}
+    className={`font-semibold xl:text-3xl md:text-xl text-lg  ${classname}`}
     >
         {children}
     </motion.h2>

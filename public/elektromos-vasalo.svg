@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.61 129.61">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Réteg_1">
+    <g>
+      <rect class="cls-1" width="129.61" height="129.61"/>
+      <path class="cls-2" d="M100.99,74.65l-20.39,17.05H14.62l24.79-36.13c7.58-11.05,20.12-17.65,33.52-17.65h20.95l7.12,36.74Z"/>
+      <ellipse class="cls-2" cx="64.8" cy="58.41" rx="16.17" ry="8.34" transform="translate(-18.01 30.96) rotate(-23.69)"/>
+      <path class="cls-2" d="M26.3,85.73s42.64,2.05,55.15-4.33,13.53-9.47,13.53-9.47"/>
+      <line class="cls-2" x1="14.62" y1="96.2" x2="85.53" y2="96.2"/>
+      <path class="cls-2" d="M93.87,37.91s1.02-6.79,8.51-6,5.11,9,12.94,9.49,7.49-3.13,7.49-3.13"/>
+    </g>
+  </g>
+</svg>

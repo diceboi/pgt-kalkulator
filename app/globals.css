@@ -11,8 +11,10 @@
   --yellow-bg: #f7c82a0a;
   --white-bg: #ffffff0a;
   --green-bg: #aaff350a;
+  --green-bg-tile: #abff3538;
+  --yellow-bg-tile: #f7c82a38;
   --grey-text: #d1d1d1;
-  --orage: #e94e1b;
+  --orange: #e94e1b;
   --yellow-hover: #be9a1e;
   --green-hover: #648832;
 }
@@ -88,3 +90,6 @@ body {
     var(--slider-color-after) 0
   );
 }
+
+/* Toggle */
+

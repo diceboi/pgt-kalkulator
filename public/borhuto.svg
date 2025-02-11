@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.61 129.61">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Réteg_1">
+    <g>
+      <rect class="cls-1" width="129.61" height="129.61"/>
+      <rect class="cls-2" x="36.89" y="21.81" width="55.82" height="88.17"/>
+      <circle class="cls-2" cx="64.8" cy="50.83" r="7.57"/>
+      <circle class="cls-2" cx="64.8" cy="82.49" r="7.57"/>
+      <circle class="cls-2" cx="48.9" cy="34.44" r="7.57"/>
+      <circle class="cls-2" cx="81.23" cy="34.44" r="7.57"/>
+      <circle class="cls-2" cx="48.9" cy="66.57" r="7.57"/>
+      <circle class="cls-2" cx="81.23" cy="66.57" r="7.57"/>
+      <circle class="cls-2" cx="48.9" cy="98.49" r="7.57"/>
+      <circle class="cls-2" cx="81.23" cy="98.49" r="7.57"/>
+      <circle class="cls-2" cx="81.23" cy="98.55" r="3.38"/>
+      <circle class="cls-2" cx="49.08" cy="66.4" r="3.38"/>
+      <circle class="cls-2" cx="81.23" cy="66.4" r="3.38"/>
+      <line class="cls-2" x1="40.39" y1="42.15" x2="89.5" y2="91.26"/>
+      <line class="cls-2" x1="55.26" y1="24.89" x2="89.5" y2="59.14"/>
+      <line class="cls-2" x1="89.36" y1="42.15" x2="40.25" y2="91.26"/>
+      <line class="cls-2" x1="74.17" y1="25.21" x2="40.25" y2="59.14"/>
+      <line class="cls-2" x1="40.46" y1="74.14" x2="73.23" y2="106.92"/>
+      <line class="cls-2" x1="89.85" y1="73.58" x2="56.61" y2="106.81"/>
+    </g>
+  </g>
+</svg>

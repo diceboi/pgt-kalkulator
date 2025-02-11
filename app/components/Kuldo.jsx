@@ -56,7 +56,6 @@ export default function Felhasznalo({ pageRef }) {
     setCegnev,
     setEmail,
     setTelefonszam,
-    setFinanszirozas,
     setAdatkezeles,
     setKampany,
   } = useContext(Context);
@@ -137,6 +136,7 @@ export default function Felhasznalo({ pageRef }) {
       SzerzodoCegNeve: cegnev,
       Email: email,
       Phone: telefonszam,
+      Finanszirozas: finanszirozas,
       UgyfelkapuKezeles: adatkezeles,
       AjanlatkeresTipusa: kampany,
       AjanlatkeresBeerkezett: currentDate,
