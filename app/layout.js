@@ -32,7 +32,6 @@ export default function RootLayout({ children }) {
         </body>
         <GoogleAnalytics gaId='G-JV1RD9PM34' />
         <GoogleTagManager gtmId='AW-401271164' />
-
     </html>
   );
 }
