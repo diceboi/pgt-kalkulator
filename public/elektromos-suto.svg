@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.61 129.61">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Réteg_1">
+    <g>
+      <rect class="cls-1" width="129.61" height="129.61"/>
+      <polyline class="cls-2" points="96.75 53.31 96.75 104.29 32.86 104.29 32.86 53.31"/>
+      <rect class="cls-2" x="32.75" y="27.81" width="64" height="20.2"/>
+      <rect class="cls-2" x="39.99" y="65.26" width="50.04" height="32.27"/>
+      <line class="cls-2" x1="39.99" y1="58.41" x2="90.03" y2="58.41"/>
+      <circle class="cls-2" cx="43.12" cy="38.28" r="3.13"/>
+      <circle class="cls-2" cx="57.72" cy="38.3" r="3.13"/>
+      <circle class="cls-2" cx="72.31" cy="38.3" r="3.13"/>
+      <circle class="cls-2" cx="86.91" cy="38.3" r="3.13"/>
+    </g>
+  </g>
+</svg>
