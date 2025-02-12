@@ -16,8 +16,8 @@ export default function Valaszto() {
 
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
-  const email = searchParams.get("email");
-  const MAX_TILES = 28;
+  const email = searchParams.get("email"); 
+  const MAX_TILES = 28; 
   const [tiles, setTiles] = useState([
     {
       id: 1,
