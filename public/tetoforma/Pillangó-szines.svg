@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#Névtelen_színátmenet_17-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-4 {
+        fill: url(#Névtelen_színátmenet_17);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="21.67" y1="81.01" x2="148.45" y2="81.01" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17-2" data-name="Névtelen színátmenet 17" x1="54.55" y1="100.02" x2="181.33" y2="100.02" xlink:href="#Névtelen_színátmenet_17"/>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-3" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <line class="cls-1" x1="87.43" y1="129.96" x2="87.44" y2="165.28"/>
+        <line class="cls-1" x1="168.2" y1="83.33" x2="168.2" y2="118.65"/>
+        <line class="cls-1" x1="34.89" y1="104.99" x2="34.89" y2="134.94"/>
+        <line class="cls-1" x1="87.44" y1="165.28" x2="168.2" y2="118.65"/>
+        <line class="cls-1" x1="60.97" y1="149.99" x2="87.44" y2="165.28"/>
+        <line class="cls-1" x1="34.89" y1="134.94" x2="60.97" y2="149.99"/>
+        <polyline class="cls-1" points="87.44 130.02 54.55 124.3 21.67 92"/>
+        <polyline class="cls-1" points="181.33 75.74 148.45 70.02 115.56 37.72"/>
+        <line class="cls-1" x1="87.44" y1="130.02" x2="181.33" y2="75.74"/>
+        <line class="cls-1" x1="21.67" y1="92" x2="115.56" y2="37.72"/>
+        <line class="cls-1" x1="54.55" y1="124.3" x2="148.45" y2="70.02"/>
+      </g>
+      <polygon class="cls-4" points="21.67 92 54.55 124.3 148.45 70.02 115.56 37.72 21.67 92"/>
+      <polygon class="cls-2" points="54.55 124.3 148.45 70.02 181.33 75.74 87.44 130.02 54.55 124.3"/>
+    </g>
+  </g>
+</svg>

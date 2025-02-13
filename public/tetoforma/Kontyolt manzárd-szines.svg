@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Névtelen_színátmenet_17-6);
+      }
+
+      .cls-2 {
+        fill: url(#Névtelen_színátmenet_17-8);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        fill: url(#Névtelen_színátmenet_17-7);
+      }
+
+      .cls-5 {
+        fill: url(#Névtelen_színátmenet_17-2);
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-7 {
+        fill: url(#Névtelen_színátmenet_17-5);
+      }
+
+      .cls-8 {
+        fill: url(#Névtelen_színátmenet_17-3);
+      }
+
+      .cls-9 {
+        fill: url(#Névtelen_színátmenet_17);
+      }
+
+      .cls-10 {
+        fill: url(#Névtelen_színátmenet_17-4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="101.2" y1="36.25" x2="113.7" y2="36.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17-2" data-name="Névtelen színátmenet 17" x1="21" y1="99.15" x2="89" y2="99.15" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-3" data-name="Névtelen színátmenet 17" x1="88.6" y1="91.9" x2="182" y2="91.9" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-4" data-name="Névtelen színátmenet 17" x1="41.86" y1="61.27" x2="160.44" y2="61.27" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-5" data-name="Névtelen színátmenet 17" x1="88.54" y1="70.48" x2="160.38" y2="70.48" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-6" data-name="Névtelen színátmenet 17" x1="41.8" y1="70.48" x2="101.15" y2="70.48" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-7" data-name="Névtelen színátmenet 17" x1="41.8" y1="47.78" x2="113.64" y2="47.78" xlink:href="#Névtelen_színátmenet_17"/>
+    <linearGradient id="Névtelen_színátmenet_17-8" data-name="Névtelen színátmenet 17" x1="101.15" y1="40.53" x2="160.38" y2="40.53" xlink:href="#Névtelen_színátmenet_17"/>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-6" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <g>
+          <g>
+            <path class="cls-3" d="M41.86,148.97v-37.3c0-5.95-11.77-16.16-20.86-21.14"/>
+            <line class="cls-3" x1="88.6" y1="175.96" x2="160.44" y2="134.48"/>
+            <line class="cls-3" x1="65.05" y1="162.36" x2="88.6" y2="175.96"/>
+            <line class="cls-3" x1="41.86" y1="148.97" x2="65.05" y2="162.36"/>
+            <polygon class="cls-3" points="41.86 68.52 113.7 27.04 160.44 54.03 88.6 95.5 41.86 68.52"/>
+            <path class="cls-3" d="M89,129.78c-.6,4.39-.41,8.85-.41,8.85v37.33"/>
+            <path class="cls-3" d="M182,76.09c-11.49,6.64-21.56,14.23-21.56,22.25v36.14"/>
+            <line class="cls-3" x1="88.59" y1="136.65" x2="160.52" y2="95.11"/>
+            <line class="cls-3" x1="41.86" y1="109.97" x2="88.59" y2="136.93"/>
+            <line class="cls-3" x1="89" y1="129.78" x2="182" y2="76.09"/>
+            <path class="cls-3" d="M160.44,54.03c.76,13.43,12.11,17.18,21.56,22.06"/>
+            <path class="cls-3" d="M41.86,68.52c-3.85,11.48-13.18,18.2-20.86,22.01l68,39.25s-.4-20.55-.4-34.28"/>
+          </g>
+          <g>
+            <path class="cls-3" d="M124.17,90.4c.77.43,1.31,1.19,1.31,2.1v9.42l-8.83,5.1v-10.96c0-.46.06-.91.18-1.35"/>
+            <path class="cls-3" d="M116.83,94.72c.42-1.56,1.55-2.93,3.17-3.75l1.21-.62c.99-.5,2.12-.42,2.96.06"/>
+            <path class="cls-3" d="M117.91,86.8c-.84-.48-1.97-.56-2.96-.06l-1.21.62c-1.62.82-2.75,2.19-3.17,3.75,0,3.61.13,8.12,6.09,15.92"/>
+            <line class="cls-3" x1="110.62" y1="90.9" x2="116.88" y2="94.52"/>
+            <line class="cls-3" x1="123.95" y1="90.29" x2="124.07" y2="90.36"/>
+            <line class="cls-3" x1="117.91" y1="86.8" x2="123.95" y2="90.29"/>
+          </g>
+          <g>
+            <path class="cls-3" d="M55.27,91.28c-.77.43-1.31,1.19-1.31,2.1v9.42l8.83,5.1v-10.96c0-.46-.06-.91-.18-1.35"/>
+            <path class="cls-3" d="M62.62,95.59c-.42-1.56-1.55-2.93-3.17-3.75l-1.21-.62c-.99-.5-2.12-.42-2.96.06"/>
+            <path class="cls-3" d="M61.54,87.67c.84-.48,1.97-.56,2.96-.06l1.21.62c1.62.82,2.75,2.19,3.17,3.75,0,3.61-.13,8.12-6.09,15.92"/>
+            <line class="cls-3" x1="68.83" y1="91.78" x2="62.56" y2="95.39"/>
+            <line class="cls-3" x1="55.49" y1="91.17" x2="55.37" y2="91.24"/>
+            <line class="cls-3" x1="61.54" y1="87.67" x2="55.49" y2="91.17"/>
+          </g>
+          <g>
+            <path class="cls-3" d="M147.62,76.84c.77.43,1.31,1.19,1.31,2.1v9.42l-8.83,5.1v-10.96c0-.46.06-.91.18-1.35"/>
+            <path class="cls-3" d="M140.27,81.15c.42-1.56,1.55-2.93,3.17-3.75l1.21-.62c.99-.5,2.12-.42,2.96.06"/>
+            <path class="cls-3" d="M141.35,73.23c-.84-.48-1.97-.56-2.96-.06l-1.21.62c-1.62.82-2.75,2.19-3.17,3.75,0,3.61.13,8.12,6.09,15.92"/>
+            <line class="cls-3" x1="134.06" y1="77.33" x2="140.33" y2="80.95"/>
+            <line class="cls-3" x1="147.4" y1="76.73" x2="147.52" y2="76.8"/>
+            <line class="cls-3" x1="141.35" y1="73.23" x2="147.4" y2="76.73"/>
+          </g>
+        </g>
+        <polyline class="cls-3" points="41.86 68.52 101.2 45.45 160.44 54.03"/>
+        <polyline class="cls-3" points="88.6 95.5 101.2 45.45 113.7 27.04"/>
+        <line class="cls-9" x1="113.7" y1="27.04" x2="101.2" y2="45.45"/>
+      </g>
+      <path class="cls-5" d="M21,90.53s16.56-6.95,20.86-22.01l46.74,26.99.4,34.28L21,90.53Z"/>
+      <path class="cls-8" d="M88.6,95.5l71.84-41.48s-1.91,13.71,21.56,22.06l-93,53.69-.4-34.28Z"/>
+      <polygon class="cls-10" points="41.86 68.52 113.7 27.04 160.44 54.03 88.6 95.5 41.86 68.52"/>
+      <polygon class="cls-7" points="101.15 45.45 160.38 54.03 88.54 95.5 101.15 45.45"/>
+      <polygon class="cls-1" points="101.15 45.45 88.54 95.5 41.8 68.52 101.15 45.45"/>
+      <polygon class="cls-4" points="101.15 45.45 113.64 27.04 41.8 68.52 101.15 45.45"/>
+      <polyline class="cls-2" points="101.15 45.45 160.38 54.03 113.64 27.04"/>
+    </g>
+  </g>
+</svg>

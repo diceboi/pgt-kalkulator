@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-3 {
+        fill: url(#Névtelen_színátmenet_17);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="37.24" y1="86.61" x2="181.71" y2="86.61" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
+      <line class="cls-1" x1="84.95" y1="132.21" x2="84.95" y2="169.88"/>
+      <line class="cls-1" x1="173.18" y1="94.09" x2="173.18" y2="118.94"/>
+      <line class="cls-1" x1="27.54" y1="92.26" x2="27.54" y2="136.73"/>
+      <line class="cls-1" x1="84.95" y1="169.88" x2="173.18" y2="118.94"/>
+      <line class="cls-1" x1="93.48" y1="140.1" x2="181.71" y2="89.16"/>
+      <line class="cls-1" x1="56.03" y1="153.18" x2="84.95" y2="169.88"/>
+      <line class="cls-1" x1="27.54" y1="136.73" x2="56.46" y2="153.43"/>
+      <polyline class="cls-1" points="37.24 84.06 20.67 98.07 37.24 84.06"/>
+      <polygon class="cls-1" points="125.48 33.12 37.24 84.06 93.48 140.1 181.71 89.16 125.48 33.12"/>
+      <polygon class="cls-3" points="125.48 33.12 37.24 84.06 93.48 140.1 181.71 89.16 125.48 33.12"/>
+    </g>
+  </g>
+</svg>

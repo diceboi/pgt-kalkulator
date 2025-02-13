@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: url(#Névtelen_színátmenet_17-2);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-4 {
+        fill: url(#Névtelen_színátmenet_17);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="41.3" y1="101.92" x2="174.64" y2="101.92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17-2" data-name="Névtelen színátmenet 17" x1="27.65" y1="86.72" x2="133.97" y2="86.72" xlink:href="#Névtelen_színátmenet_17"/>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-3" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <path class="cls-1" d="M28.15,153.03v-62.47c0-12.26,13.26-19.92,23.88-13.8h0c17.28,9.96,27.93,28.39,27.93,48.33v57.9"/>
+        <path class="cls-1" d="M79.54,167.56l-38.24-22.08v-62.47c0-6.04,3.22-10.97,7.77-13.68"/>
+        <path class="cls-1" d="M131.12,21.98c4.59-2.52,10.41-2.81,15.6.18h0c17.28,9.96,27.93,28.39,27.93,48.33v57.85"/>
+        <line class="cls-1" x1="79.96" y1="183" x2="174.64" y2="128.34"/>
+        <line class="cls-1" x1="36.82" y1="76.41" x2="131.11" y2="21.97"/>
+        <line class="cls-1" x1="28.15" y1="153.03" x2="41.3" y2="145.48"/>
+      </g>
+      <path class="cls-4" d="M79.54,183l.43-57.9s-.45-44.08-38.66-50.22c.25-.04,92.42-54.04,92.42-54.04,0,0,40.92,0,40.91,49.65,0,56.11,0,57.85,0,57.85l-95.1,54.66Z"/>
+      <path class="cls-2" d="M28.15,153.03v-62.47s1.18-12.81,14.03-17.25c11.11-6.45,91.54-52.47,91.54-52.47"/>
+    </g>
+  </g>
+</svg>

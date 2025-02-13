@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #b3b3b3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <polyline class="cls-1" points="65.14 126.84 65.14 161.17 31.63 141.82 31.63 104.1"/>
+        <line class="cls-1" x1="157.81" y1="72.99" x2="157.91" y2="92.31"/>
+        <line class="cls-1" x1="65.14" y1="161.17" x2="99.47" y2="141.39"/>
+        <line class="cls-1" x1="141.95" y1="82.24" x2="169.01" y2="66.52"/>
+        <line class="cls-1" x1="61.78" y1="128.79" x2="99.47" y2="105.92"/>
+        <line class="cls-1" x1="41.22" y1="103.1" x2="61.78" y2="128.79"/>
+        <line class="cls-1" x1="20.71" y1="105.1" x2="41.22" y2="103.1"/>
+        <line class="cls-1" x1="127.95" y1="42.83" x2="148.45" y2="40.84"/>
+        <line class="cls-1" x1="148.45" y1="40.84" x2="169.01" y2="66.52"/>
+        <line class="cls-1" x1="41.22" y1="103.1" x2="148.45" y2="40.84"/>
+        <line class="cls-1" x1="20.71" y1="105.1" x2="127.95" y2="42.83"/>
+        <g>
+          <g>
+            <polyline class="cls-1" points="137.24 127.84 137.24 162.16 170.75 142.81 170.75 105.09"/>
+            <line class="cls-1" x1="137.24" y1="162.16" x2="99.47" y2="141.39"/>
+            <line class="cls-1" x1="140.6" y1="129.78" x2="99.47" y2="105.92"/>
+            <line class="cls-1" x1="161.16" y1="104.09" x2="100.4" y2="68.85"/>
+            <line class="cls-1" x1="181.67" y1="106.09" x2="140.53" y2="82.24"/>
+            <g>
+              <line class="cls-1" x1="161.16" y1="104.09" x2="140.6" y2="129.78"/>
+              <line class="cls-1" x1="181.67" y1="106.09" x2="161.16" y2="104.09"/>
+            </g>
+            <g>
+              <line class="cls-1" x1="100.4" y1="68.85" x2="99.47" y2="105.92"/>
+              <line class="cls-1" x1="140.53" y1="82.24" x2="100.4" y2="68.85"/>
+            </g>
+          </g>
+          <line class="cls-1" x1="99.47" y1="105.92" x2="99.47" y2="141.39"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

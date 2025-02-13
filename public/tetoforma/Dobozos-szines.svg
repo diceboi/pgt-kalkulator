@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#Névtelen_színátmenet_17-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+
+      .cls-4 {
+        fill: url(#Névtelen_színátmenet_17);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17" data-name="Névtelen színátmenet 17" x1="21.67" y1="109.28" x2="77.77" y2="109.28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7c82a"/>
+      <stop offset="1" stop-color="#be9a1e"/>
+    </linearGradient>
+    <linearGradient id="Névtelen_színátmenet_17-2" data-name="Névtelen színátmenet 17" x1="49.68" y1="79.38" x2="181.33" y2="79.38" xlink:href="#Névtelen_színátmenet_17"/>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-3" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <polyline class="cls-1" points="82.36 131.53 82.36 178.42 36.57 151.99 36.57 110.42"/>
+        <line class="cls-1" x1="166.03" y1="83.23" x2="166.03" y2="130.12"/>
+        <line class="cls-1" x1="82.36" y1="178.42" x2="166.03" y2="130.12"/>
+        <line class="cls-1" x1="77.77" y1="134.19" x2="181.33" y2="74.39"/>
+        <polygon class="cls-1" points="21.67 101.83 49.68 84.37 77.77 134.19 21.67 101.83"/>
+        <line class="cls-1" x1="153.25" y1="24.58" x2="181.33" y2="74.39"/>
+        <line class="cls-1" x1="49.68" y1="84.37" x2="153.25" y2="24.58"/>
+        <g>
+          <line class="cls-1" x1="99.78" y1="89.04" x2="84.55" y2="80.26"/>
+          <line class="cls-1" x1="113.08" y1="80.2" x2="99.56" y2="72.4"/>
+          <line class="cls-1" x1="84.55" y1="80.26" x2="98.88" y2="105.67"/>
+          <line class="cls-1" x1="84.55" y1="80.26" x2="99.56" y2="72.4"/>
+          <g>
+            <line class="cls-1" x1="98.88" y1="105.67" x2="115.23" y2="96.23"/>
+            <path class="cls-1" d="M98.88,105.67v-11.53c0-12.81,16.35-19.76,16.35-9.44v11.53"/>
+          </g>
+        </g>
+        <g>
+          <line class="cls-1" x1="132.13" y1="70.36" x2="116.9" y2="61.58"/>
+          <line class="cls-1" x1="145.43" y1="61.52" x2="131.91" y2="53.72"/>
+          <line class="cls-1" x1="116.9" y1="61.58" x2="131.23" y2="86.99"/>
+          <line class="cls-1" x1="116.9" y1="61.58" x2="131.91" y2="53.72"/>
+          <g>
+            <line class="cls-1" x1="131.23" y1="86.99" x2="147.58" y2="77.55"/>
+            <path class="cls-1" d="M131.23,86.99v-11.53c0-12.81,16.35-19.76,16.35-9.44v11.53"/>
+          </g>
+        </g>
+      </g>
+      <polygon class="cls-4" points="21.67 101.83 49.68 84.37 77.77 134.19 21.67 101.83"/>
+      <polygon class="cls-2" points="49.68 84.37 153.25 24.58 181.33 74.39 77.77 134.19 49.68 84.37"/>
+    </g>
+  </g>
+</svg>

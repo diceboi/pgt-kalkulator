@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Réteg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203 203">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #b3b3b3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+        opacity: 0;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="101.5" x2="203" y2="101.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e57253"/>
+      <stop offset="1" stop-color="#e94e1b"/>
+    </linearGradient>
+  </defs>
+  <g id="types_of_roofs">
+    <g>
+      <rect class="cls-2" width="203" height="203" rx="12" ry="12"/>
+      <g>
+        <g>
+          <polyline class="cls-1" points="81.89 177.08 35.7 150.41 35.7 108.49"/>
+          <line class="cls-1" x1="81.89" y1="129.78" x2="81.89" y2="177.08"/>
+          <line class="cls-1" x1="166.28" y1="81.06" x2="166.28" y2="125.3"/>
+          <line class="cls-1" x1="81.89" y1="177.08" x2="127.9" y2="150.51"/>
+          <line class="cls-1" x1="77.25" y1="132.46" x2="181.71" y2="72.14"/>
+          <polygon class="cls-1" points="20.67 99.82 48.92 82.21 77.25 132.46 20.67 99.82"/>
+          <line class="cls-1" x1="153.38" y1="21.9" x2="181.71" y2="72.14"/>
+          <line class="cls-1" x1="48.92" y1="82.21" x2="153.38" y2="21.9"/>
+        </g>
+        <g>
+          <line class="cls-1" x1="131.35" y1="181.1" x2="131.35" y2="154.09"/>
+          <line class="cls-1" x1="135.19" y1="158.08" x2="106.94" y2="125.49"/>
+          <line class="cls-1" x1="171.92" y1="157.68" x2="171.92" y2="136.84"/>
+          <line class="cls-1" x1="174.73" y1="135.22" x2="146.47" y2="102.63"/>
+          <line class="cls-1" x1="106.94" y1="125.49" x2="146.47" y2="102.63"/>
+          <line class="cls-1" x1="135.19" y1="158.08" x2="174.73" y2="135.22"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
