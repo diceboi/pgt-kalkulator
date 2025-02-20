@@ -77,6 +77,12 @@ export default function Felhasznalo({ pageRef }) {
         case "pgt-zt":
           kampanyValue = "Profigreentech indikatív ajánlatkérő - Zöldtrend";
           break;
+        case "pgt-iot":
+          kampanyValue = "IoT - Profi Greentech";
+          break;
+        case "fb-technokrata":
+          kampanyValue = "Technokrata - Fullblack";
+          break;
         default:
           kampanyValue = kampanyParam;
       }
