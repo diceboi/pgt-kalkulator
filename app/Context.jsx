@@ -202,7 +202,7 @@ export default function ContextProvider({ children }) {
                 <H2 classname={'text-yellow text-center pb-4'}> Csak egy fontos kérdés mielőtt továbblépsz</H2>
               </div>
               <H3 classname={'text-center pb-8'}>A <span className="text-[--green] font-bold">Vidéki Otthonfelújítási Programból</span> szeretnéd finanszírozni a napelem rendszert?</H3>
-              <span className="font-light text-2xl pb-4 text-center"> Gyorsan fusd át a feltételeket, hogy megelelsz-e:</span>
+              <span className="font-light text-2xl pb-4 text-center"> Gyorsan fusd át a feltételeket, hogy megfelelsz-e:</span>
               <div className="space-y-4 p-4 bg-[--black] rounded-2xl">
               <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>5000 főnél kevesebb lakosú településen lévő ingatlanban állandó lakcím.</H4>
               <H4 classname={'flex flex-nowrap items-start gap-2'}><TbCircleCheckFilled className="text-[--green] min-w-8 h-auto"/>Legalább egy 25 év alatti eltartott gyermek a háztartásban.</H4>
