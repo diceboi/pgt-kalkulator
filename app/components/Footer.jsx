@@ -10,7 +10,7 @@ import { useState, useEffect, Suspense } from "react";
 
 function FooterComponent() {
     const searchParams = useSearchParams();
-    const [kampany, setKampany] = useState("");
+    const [kampany, setKampany] = useState("pgt");
 
     useEffect(() => {
         if (!searchParams) return;

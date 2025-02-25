@@ -9,7 +9,7 @@ import { useState, useEffect, Suspense } from "react";
 
 function NavComponent() {
     const searchParams = useSearchParams();
-    const [kampany, setKampany] = useState("");
+    const [kampany, setKampany] = useState("pgt");
 
     useEffect(() => {
         if (!searchParams) return;
