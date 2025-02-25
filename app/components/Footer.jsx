@@ -6,7 +6,7 @@ import Paragraph from "./Typo/Paragraph";
 import Button from "./Typo/Button";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 
 export default function Footer() {
 
@@ -31,8 +31,9 @@ export default function Footer() {
         <>
         <div className="flex flex-col bg-[--black] border-t border-[--white-border] px-4 py-16 text-white">
             <div className="container m-auto flex lg:flex-row flex-col lg:gap-0 gap-10">
-
+                <Suspense>
                 <div className="flex flex-col gap-10 lg:w-1/2">
+                
                     {kampany === "pgt" ? (
                         <Image src="/pgt-white-01.svg" height={100} width={91} alt="Profi Greentech logo" className="w-[91px] h-auto" />
                     ):(
@@ -44,6 +45,7 @@ export default function Footer() {
                         <FaInstagram className="text-[--yellow] min-w-6 min-h-6"/>
                     </div>
                 </div>
+                </Suspense>
 
                 <div className="flex flex-col gap-8 lg:w-1/4">
                     <Button>Gyors elérés</Button>

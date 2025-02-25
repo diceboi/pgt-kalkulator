@@ -10,7 +10,7 @@ import Link from "next/link"
 import { HiArrowSmLeft } from "react-icons/hi";
 import { HiChevronLeft } from "react-icons/hi";
 import { useSearchParams } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 
 
 export default function Nav() {
@@ -35,6 +35,7 @@ export default function Nav() {
     return(
         <div className="sticky top-0 flex flex-col bg-[--black] w-full h-auto border-b border-[--white-border] px-4 z-50">
             <nav className="container m-auto flex flex-nowrap gap-4 min-h-[60px] items-center justify-between">
+                <Suspense>
                 {kampany === "pgt" ? (
                     <Image src="/pgt-white-01.svg" height={100} width={91} alt="Profi Greentech logo" className="lg:w-[91px] w-[85px] h-auto" />
                 ):(
@@ -46,6 +47,7 @@ export default function Nav() {
                     <Button classname="lg:flex hidden flex-nowrap gap-2 text-white hover:text-[--yellow] hover:underline"><HiArrowSmLeft />Vissza a főoldalra</Button>
                     <Button classname="lg:hidden flex flex-nowrap gap-2 text-white hover:text-[--yellow] hover:underline"><HiArrowSmLeft /></Button>
                 </Link>
+                </Suspense>
             </nav>
         </div>
     )
