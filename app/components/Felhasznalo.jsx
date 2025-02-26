@@ -145,7 +145,7 @@ export default function Felhasznalo({ pageRef }) {
       Finanszirozas: finanszirozas,
       UgyfelkapuKezeles: adatkezeles,
       AjanlatkeresTipusa: kampany,
-      AjanlatkeresBeerkezett: currentDate,
+      /*AjanlatkeresBeerkezett: currentDate,*/
     };
 
     sendToWebhook(dataToSend);
