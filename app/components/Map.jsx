@@ -37,6 +37,7 @@ export default function MapComponent() {
   const [markerPosition, setMarkerPosition] = useState(defaultMapCenter); // Initial marker position
   const [shapes, setShapes] = useState([]); // State to store drawn shapes
   const [drawingMode, setDrawingMode] = useState(null); // Drawing mode (null = none)
+  const [map, setMap] = useState(false);
   const mapRef = useRef(null); // Reference to the map
   const inputRef = useRef(null);
   const autocompleteRef = useRef(null); // Reference for Autocomplete instance
@@ -182,9 +183,11 @@ export default function MapComponent() {
               color: "#ffffff",
             }}
           />
+
         </Autocomplete>
 
         {/* Google Map */}
+        {/*<div className={`${map ? 'hidden' : 'block'}`}>*/}
         <GoogleMap
           mapContainerStyle={defaultMapContainerStyle}
           center={center}
@@ -223,7 +226,7 @@ export default function MapComponent() {
             onOverlayComplete={(e) => handleDrawingComplete(e)}
           />*/}
         </GoogleMap>
-
+        {/*</div>*/}
         {/* Shape Controls */}
         {/*<div className="bg-[--antracit] p-4 mt-2">
           <Paragraph classname="mb-2 text-white">
