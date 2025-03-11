@@ -37,12 +37,23 @@ export default function MapComponent() {
   const [markerPosition, setMarkerPosition] = useState(defaultMapCenter); // Initial marker position
   const [shapes, setShapes] = useState([]); // State to store drawn shapes
   const [drawingMode, setDrawingMode] = useState(null); // Drawing mode (null = none)
-  const [map, setMap] = useState(false);
-  const mapRef = useRef(null); // Reference to the map
+  const [showMap, setShowMap] = useState(false);
   const inputRef = useRef(null);
   const autocompleteRef = useRef(null); // Reference for Autocomplete instance
+
+  const [address, setAddress] = useState({
+    postalCode: "",
+    city: "",
+    street: "",
+    houseNumber: "",
+  });
+
   const { currentPage, addPage, cim, setCim, googlemap, setGooglemap, tetofajta } =
     useContext(Context);
+
+  const mapRef = useRef(null);
+
+  const isAddressComplete = Object.values(address).every((field) => field.trim() !== "");
 
   const scrollToNext = (id) => {
     setTimeout(() => {
@@ -58,6 +69,26 @@ export default function MapComponent() {
     return `https://www.google.com/maps?q=${lat},${lng}`;
   };
 
+  const fetchCoordinates = async () => {
+    const fullAddress = `${address.postalCode} ${address.city}, ${address.street} ${address.houseNumber}`;
+    const geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ address: fullAddress }, (results, status) => {
+      if (status === "OK" && results[0]) {
+        const location = results[0].geometry.location;
+        const newCenter = { lat: location.lat(), lng: location.lng() };
+
+        setCenter(newCenter);
+        setMarkerPosition(newCenter);
+        setShowMap(true);
+        setCim(fullAddress);
+        setGooglemap(generateGoogleMapsLink(newCenter.lat, newCenter.lng));
+      } else {
+        toast.error("Nem sikerült megtalálni a címet. Kérlek, ellenőrizd az adatokat.");
+      }
+    });
+  };
+
   // Középpont frissítése térkép mozgatásakor
   const handleMapDragEnd = () => {
     if (mapRef.current) {
@@ -68,10 +99,8 @@ export default function MapComponent() {
       setCenter(newCenter);
       setMarkerPosition(newCenter);
       setGooglemap(generateGoogleMapsLink(newCenter.lat, newCenter.lng));
-      console.log(cim);
-      console.log(googlemap);
     }
-  };
+  };  
 
   // Kereséskor középpont frissítése
   const handlePlaceChanged = () => {
@@ -155,113 +184,62 @@ export default function MapComponent() {
   return (
     <>
       <div
-        style={{ width: "100%", height: "500px", position: "relative" }}
-        className="rounded-3xl  mt-20 px-4"
+        style={{ width: "100%", position: "relative" }}
+        className="rounded-3xl px-4"
       >
-        {/* Search Box */}
-        <Autocomplete
-          onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-          onPlaceChanged={handlePlaceChanged}
-        >
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Írd be a címet..."
-            onKeyDown={handleKeyDown}
-            style={{
-              position: "absolute",
-              top: "-60px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 10,
-              width: "100%",
-              padding: "10px",
-              width: "95%",
-              borderRadius: "30px",
-              border: "1px solid var(--white-border)",
-              background: "transparent",
-              color: "#ffffff",
-            }}
-          />
+        <div className="flex lg:flex-row flex-col gap-4 p-4">
+        <input
+          type="text"
+          placeholder="Irányítószám"
+          value={address.postalCode}
+          onChange={(e) => setAddress({ ...address, postalCode: e.target.value })}
+          className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+        />
+        <input
+          type="text"
+          placeholder="Település"
+          value={address.city}
+          onChange={(e) => setAddress({ ...address, city: e.target.value })}
+          className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+        />
+        <input
+          type="text"
+          placeholder="Utca"
+          value={address.street}
+          onChange={(e) => setAddress({ ...address, street: e.target.value })}
+          className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+        />
+        <input
+          type="text"
+          placeholder="Házszám"
+          value={address.houseNumber}
+          onChange={(e) => setAddress({ ...address, houseNumber: e.target.value })}
+          className="w-full bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+        />
 
-        </Autocomplete>
-
-        {/* Google Map */}
-        {/*<div className={`${map ? 'hidden' : 'block'}`}>*/}
-        <GoogleMap
-          mapContainerStyle={defaultMapContainerStyle}
-          center={center}
-          zoom={defaultMapZoom}
-          options={defaultMapOptions}
-          onLoad={(map) => (mapRef.current = map)} // Store map reference
-          onDragEnd={handleMapDragEnd}
+        <MainButton
+          onclick={fetchCoordinates}
+          disabled={!isAddressComplete}
+          classname={`w-full ${!isAddressComplete ? "opacity-50 cursor-not-allowed" : ""}`}
         >
-          {/* Draggable Marker */}
-          <Marker
-            position={center} // A marker mindig az állapotban lévő középponton áll
-            draggable={false} // Nem mozgatható
-          />
-          {/* Drawing Manager */}
-          {/*<DrawingManager
-            options={{
-              drawingMode: drawingMode,
-              drawingControl: false, // Disable built-in drawing control UI
-              circleOptions: {
-                fillColor: "#ff0000",
-                fillOpacity: 0.4,
-                strokeWeight: 1,
-                clickable: false,
-                editable: true,
-                zIndex: 1,
-              },
-              polygonOptions: {
-                fillColor: "#00ff00",
-                fillOpacity: 0.4,
-                strokeWeight: 1,
-                clickable: false,
-                editable: true,
-                zIndex: 1,
-              },
-            }}
-            onOverlayComplete={(e) => handleDrawingComplete(e)}
-          />*/}
-        </GoogleMap>
-        {/*</div>*/}
-        {/* Shape Controls */}
-        {/*<div className="bg-[--antracit] p-4 mt-2">
-          <Paragraph classname="mb-2 text-white">
-            Ha extra segítőkész akarsz lenni, kérlek az &quot;Alakzat
-            rajzolása&quot; gomb-bal rajzold körbe az a felületet ahova a
-            napelemrendszert szeretnéd.
-          </Paragraph>
-          <div className="flex lg:flex-row flex-col gap-2 mb-4">
-            <button
-              className="font-bold xl:text-sm text-xs tracking-wide border border-[--green] px-4 py-2 text-[--green] hover:bg-[--green] hover:text-[--black] transition-all rounded-3xl min-w-fit"
-              onClick={() => setDrawingMode("polygon")}
-            >
-              Alakzat rajzolás
-            </button>
-            <button
-              className="font-bold xl:text-sm text-xs tracking-wide border border-red-500 px-4 py-2 text-red-500 hover:bg-red-500 hover:text-[--black] transition-all rounded-3xl min-w-fit"
-              onClick={clearAllShapes}
-            >
-              Minden alakzat törlése
-            </button>
-          </div>
-          <ul className="flex gap-4">
-            {shapes.map((shape) => (
-              <li key={shape.id} className="mb-1">
-                Felület -{" "}
-                <button
-                  className="text-red-500 underline"
-                  onClick={() => deleteShape(shape.id)}
-                >
-                  Törlés
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>*/}
+          Térkép megnyitása
+        </MainButton>
+      </div>
+        {/* Google Térkép */}
+      {showMap && (
+        <div style={{ width: "100%", height: "500px", position: "relative" }} className="rounded-3xl mt-4">
+          <GoogleMap
+            mapContainerStyle={defaultMapContainerStyle}
+            center={center}
+            zoom={defaultMapZoom}
+            options={defaultMapOptions}
+            onLoad={(map) => (mapRef.current = map)}
+            onDragEnd={handleMapDragEnd} // Eseménykezelő hozzáadása
+          >
+            <Marker position={center} />
+          </GoogleMap>
+        </div>
+      )}
       </div>
       <div className={`${cim ? 'sticky' : 'hidden' } bottom-0 p-4 flex flex-col justify-center items-center`}>
           <MainButton

@@ -17,7 +17,7 @@ export default function Cim({ pageRef }) {
       <BaseContainer
         title={"Hova szeretnéd telepíteni a napelemet?"}
         subtitle={
-          "A keresőmezőbe írd be a telepítési címet, nyomj entert, vagy válaszd ki a listából a címet. Ezután mozgasd úgy a térképet, hogy a kis piros jelölő a (tető)felület fölött legyen."
+          "Írd be a telepítés címét, kattints a 'Térkép megnyitása' gombra, majd mozgasd a térképet úgy, hogy a piros jelölő, a háztetőd felett legyen."
         }
       >
         <MapComponent pageRef={pageRef} />
