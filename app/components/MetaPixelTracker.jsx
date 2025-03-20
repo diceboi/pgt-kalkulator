@@ -1,14 +1,6 @@
-"use client"
 
-import { useEffect } from "react";
-import ReactPixel from "react-facebook-pixel";
-
-const MetaPixelTracker = () => {
-    useEffect(() => {
-      const pixelId = "109272727997510";
-      ReactPixel.init(pixelId);
-      ReactPixel.pageView();
-    }, []);
-    return null;
-  };
-  export default MetaPixelTracker;
+export const trackLeadEvent = async () => {
+  const { default: ReactPixel } = await import("react-facebook-pixel");
+  ReactPixel.init(process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || '');
+  ReactPixel.track("Lead");
+};

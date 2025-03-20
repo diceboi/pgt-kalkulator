@@ -235,6 +235,10 @@ export default function Felhasznalo({ pageRef }) {
               telefonszam &&
               adatkezeles === "Hozzájárulok az adataim kezeléséhez"
             ) {
+              // Fire the Facebook Lead event when form submission is successful
+              if (typeof fbq !== "undefined") {
+                fbq("track", "Lead");
+              }
               toast.success("Sikeres beküldés!");
               handleSendData();
               if (valaszto === 'Lakossági') {
