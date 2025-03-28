@@ -32,7 +32,7 @@ export default function Calculator() {
   const [valasztoRef, valasztoInView] = useInView({ threshold: 0.75 });
   const [villanyszamlaRef, villanyszamlaInView] = useInView({ threshold: 0.75 });
   const [tetofajtaRef, tetofajtaInView] = useInView({ threshold: 0.75 });
-  const [telepiteshelyeRef, telepiteshelyeInView] = useInView({ threshold: 0.75 })
+  const [telepiteshelyeRef, telepiteshelyeInView] = useInView({ threshold: 0.75 });
   const [tetofedoanyagRef, tetofedoanyagInView] = useInView({ threshold: 0.75 });
   const [hajlasszogRef, hajlasszogInView] = useInView({ threshold: 0.75 });
   const [egtajakRef, egtajakInView] = useInView({ threshold: 0.75 });

@@ -83,6 +83,9 @@ export default function Felhasznalo({ pageRef }) {
         case "fb-technokrata":
           kampanyValue = "Technokrata - Fullblack";
           break;
+        case "hirlevel":
+          kampanyValue = "Hírlevél";
+          break;
         default:
           kampanyValue = kampanyParam;
       }
