@@ -86,6 +86,9 @@ export default function Felhasznalo({ pageRef }) {
         case "hirlevel":
           kampanyValue = "Hírlevél";
           break;
+        case "ujsag":
+          kampanyValue = "Újság";
+          break;
         default:
           kampanyValue = kampanyParam;
       }
