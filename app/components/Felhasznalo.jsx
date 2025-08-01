@@ -20,7 +20,6 @@ import { toast } from "sonner";
 import BaseContainer from "./UI/BaseContainer";
 
 export default function Felhasznalo({ pageRef }) {
-
   const searchParams = useSearchParams();
 
   const {
@@ -89,13 +88,16 @@ export default function Felhasznalo({ pageRef }) {
         case "ujsag":
           kampanyValue = "Újság";
           break;
+        case "ajandek-inverter":
+          kampanyValue = "AJÁNDÉK inverter kampányról érkezett";
+          break;
         default:
           kampanyValue = kampanyParam;
       }
       setKampany(kampanyValue);
       console.log("Beállított kampány érték:", kampanyValue);
     }
-  }, [searchParams, setKampany]);  
+  }, [searchParams, setKampany]);
 
   const sendToWebhook = async (contextData) => {
     try {
@@ -114,16 +116,14 @@ export default function Felhasznalo({ pageRef }) {
         console.log("Data sent successfully");
       } else {
         console.error("Failed to send data", await response.text());
-        
       }
     } catch (error) {
       console.error("Error sending data", error);
-      console.log(contextData)
+      console.log(contextData);
     }
   };
 
   const handleSendData = () => {
-
     const currentDate = new Date().toISOString();
 
     const dataToSend = {
@@ -181,13 +181,13 @@ export default function Felhasznalo({ pageRef }) {
         />
         {valaszto === "Üzleti" && (
           <input
-          type="text"
-          name="cegnev"
-          className="w-full lg:w-1/2 bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
-          placeholder="Cégnév*"
-          value={cegnev || ""}
-          onChange={(e) => setCegnev(e.target.value)}
-        />
+            type="text"
+            name="cegnev"
+            className="w-full lg:w-1/2 bg-[--antracit] border border-[--white-border] rounded-full px-4 py-2 text-white"
+            placeholder="Cégnév*"
+            value={cegnev || ""}
+            onChange={(e) => setCegnev(e.target.value)}
+          />
         )}
         <input
           type="email"
@@ -212,7 +212,11 @@ export default function Felhasznalo({ pageRef }) {
             id="acceptance"
             className="p-4 text-lg bg-[--white] mt-1"
             checked={adatkezeles === "Hozzájárulok az adataim kezeléséhez"}
-            onChange={(e) => setAdatkezeles(e.target.checked ? "Hozzájárulok az adataim kezeléséhez" : null)}
+            onChange={(e) =>
+              setAdatkezeles(
+                e.target.checked ? "Hozzájárulok az adataim kezeléséhez" : null
+              )
+            }
           />
           <label htmlFor="acceptance" className="text-white text-xs">
             Elolvastam, megértettem, és elfogadom az{" "}
@@ -228,9 +232,7 @@ export default function Felhasznalo({ pageRef }) {
           </label>
         </div>
       </div>
-      <div
-        className="p-4 flex flex-col justify-center items-center w-full"
-      >
+      <div className="p-4 flex flex-col justify-center items-center w-full">
         <SendButton
           classname={""}
           onclick={() => {
@@ -247,10 +249,14 @@ export default function Felhasznalo({ pageRef }) {
               }
               toast.success("Sikeres beküldés!");
               handleSendData();
-              if (valaszto === 'Lakossági') {
-                window.location.replace("https://profigreentech.hu/koszonjuk-lakossagi");
+              if (valaszto === "Lakossági") {
+                window.location.replace(
+                  "https://profigreentech.hu/koszonjuk-lakossagi"
+                );
               } else {
-                window.location.replace("https://profigreentech.hu/koszonjuk-kalkulator");
+                window.location.replace(
+                  "https://profigreentech.hu/koszonjuk-kalkulator"
+                );
               }
             } else {
               toast.error(
