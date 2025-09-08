@@ -22,6 +22,10 @@ import BaseContainer from "./UI/BaseContainer";
 export default function Felhasznalo({ pageRef }) {
   const searchParams = useSearchParams();
 
+  const isValidEmail = (email) => {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+  };
+
   const {
     valaszto,
     villanyszamla,
@@ -243,6 +247,10 @@ export default function Felhasznalo({ pageRef }) {
               telefonszam &&
               adatkezeles === "Hozzájárulok az adataim kezeléséhez"
             ) {
+              if (!isValidEmail(email)) {
+                toast.error("Kérlek érvényes email címet adj meg!");
+                return;
+              }
               // Fire the Facebook Lead event when form submission is successful
               if (typeof fbq !== "undefined") {
                 fbq("track", "Lead");
