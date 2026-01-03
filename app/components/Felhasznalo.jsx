@@ -95,6 +95,9 @@ export default function Felhasznalo({ pageRef }) {
         case "ajandek-inverter":
           kampanyValue = "AJÁNDÉK inverter kampányról érkezett";
           break;
+        case "lakossagi-energiatarolasi-program":
+          kampanyValue = "Lakossági Energiatárolási Program 2026";
+          break;
         default:
           kampanyValue = kampanyParam;
       }
