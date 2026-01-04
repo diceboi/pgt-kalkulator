@@ -218,7 +218,7 @@ export default function Felhasznalo({ pageRef }) {
             name="acceptance"
             id="acceptance"
             className="p-4 text-lg bg-[--white] mt-1"
-            checked={adatkezeles === "Hozzájárulok az adataim kezeléséhez"}
+            checked={adatkezeles === "Hozzájárulok az adataim kezeléséhez "}
             onChange={(e) =>
               setAdatkezeles(
                 e.target.checked ? "Hozzájárulok az adataim kezeléséhez" : null
