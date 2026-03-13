@@ -22,7 +22,7 @@ import BaseContainer from "./UI/BaseContainer"
 export default function Valaszto() {
   const [rendszer, setRendszer] = useState("lakossági");
 
-  const { currentPage, addPage, valaszto, setValaszto, setForm, togglePopup } =
+  const { currentPage, addPage, valaszto, setValaszto, setForm, togglePopup, setFinanszirozas } =
     useContext(Context);
 
   const scrollToNext = (id, delay = 1000) => {
@@ -39,7 +39,7 @@ export default function Valaszto() {
         <div className="flex flex-nowrap items-center justify-center gap-8 w-full">
           <ImageButton
             onclick={() => {
-              setRendszer("lakossagi"), setValaszto("Lakossági"), scrollToNext('2'), addPage('2'), setForm('finanszirozas'), togglePopup('finanszirozas')
+              setRendszer("lakossagi"), setValaszto("Lakossági"), scrollToNext('2'), addPage('2'), setFinanszirozas('Nem tudom')
             }}
             animate={valaszto === "Lakossági" ? "checked" : "initial"}
             baseImage={"/lakossagi-feher.svg"}
